@@ -1,0 +1,30 @@
+Val is 1.12
+Fg acc is 79
+
+Epoch 5 train 1.12 reg 0.4224 clf 0.7940  val 0.95 fg avc 84.47
+
+Epoch 10 train 1.11 reg 0.3797 clf 0.7319 val 0.8746 fg acc 87.09
+
+
+2026-04-29 06:00:14,665 - INFO -   [19:100] loss=1.1606  reg=0.3980  clf=0.7626
+2026-04-29 06:07:16,610 - INFO -   [19:200] loss=1.0560  reg=0.3599  clf=0.6961
+2026-04-29 06:13:56,210 - INFO -   [19:300] loss=1.1027  reg=0.4053  clf=0.6974
+2026-04-29 06:20:59,180 - INFO -   [19:400] loss=0.8557  reg=0.2420  clf=0.6137
+2026-04-29 06:28:00,368 - INFO -   [19:500] loss=1.0175  reg=0.3373  clf=0.6802
+2026-04-29 06:34:38,228 - INFO -   [19:600] loss=0.7881  reg=0.2379  clf=0.5502
+2026-04-29 06:41:31,200 - INFO -   [19:700] loss=0.9623  reg=0.3230  clf=0.6393
+2026-04-29 06:44:11,569 - INFO - Epoch  19/20  train=0.9591 (reg=0.3207 clf=0.6384)  lr=0.000000
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-29 06:45:49,126 - INFO -            val=0.7209  fg_acc=88.47%
+2026-04-29 06:45:49,158 - INFO -
+Final model → models/pruning\finetuned_final.pth
+2026-04-29 06:45:49,158 - INFO - Best val loss: 0.7205
+2026-04-29 06:45:49,158 - INFO -
+Done. Compare finetuned_best.pth against your original model.
+
+

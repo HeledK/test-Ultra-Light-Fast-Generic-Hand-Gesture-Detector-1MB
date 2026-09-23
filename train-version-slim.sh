@@ -4,7 +4,7 @@ log_dir="$model_root_path/logs"
 log="$log_dir/log"
 mkdir -p "$log_dir"
 
-python3 -u train.py \
+python -u train.py \
   --datasets \
   ./data/wider_face_add_lm_10_10 \
   --validation_dataset \
@@ -12,21 +12,23 @@ python3 -u train.py \
   --net \
   slim \
   --num_epochs \
-  200 \
+  39 \
   --milestones \
-  "95,150" \
+  "19,34" \
   --lr \
-  1e-2 \
+  5e-4 \
   --batch_size \
-  24 \
+  32 \
   --input_size \
   320 \
   --checkpoint_folder \
   ${model_root_path} \
   --num_workers \
-  4 \
+  6 \
   --log_dir \
   ${log_dir} \
   --cuda_index \
   0 \
+  --resume \
+  models/train-version-slim/slim-Epoch-20-Loss-4.218339783080081/slim-Epoch-20-Loss-4.218339783080081.pth \
   2>&1 | tee "$log"

@@ -1,0 +1,21 @@
+priors nums:4420
+2026-02-07 22:25:42,043 - root - INFO - Use Cuda.
+2026-02-07 22:25:42,043 - root - INFO - Namespace(dataset_type='voc', datasets=['./data/wider_face_add_lm_10_10'], validation_dataset='./data/wider_face_add_lm_10_10', balance_data=False, net='slim', freeze_base_net=False, freeze_net=False, lr=0.01, momentum=0.9, weight_decay=0.0005, gamma=0.1, base_net_lr=None, extra_layers_lr=None, base_net=None, pretrained_ssd=None, resume=None, scheduler='multi-step', milestones='95,150', t_max=120, batch_size=4, num_epochs=1, num_workers=0, validation_epochs=5, debug_steps=100, use_cuda=True, checkpoint_folder='./models/train-version-slim', log_dir='./models/train-version-slim/logs', cuda_index='0', power=2, overlap_threshold=0.35, optimizer_type='SGD', input_size=320, quan_size=128)
+2026-02-07 22:25:42,059 - root - INFO - Prepare training datasets.
+2026-02-07 22:25:42,061 - root - INFO - No labels file, using default VOC classes.
+2026-02-07 22:25:42,061 - root - INFO - Stored labels into file ./models/train-version-slim\voc-model-labels.txt.
+2026-02-07 22:25:42,062 - root - INFO - Train dataset size: 320
+2026-02-07 22:25:42,062 - root - INFO - Prepare Validation datasets.
+2026-02-07 22:25:42,073 - root - INFO - No labels file, using default VOC classes.
+2026-02-07 22:25:42,073 - root - INFO - validation dataset size: 80
+2026-02-07 22:25:42,073 - root - INFO - Build network.
+2026-02-07 22:25:42,313 - root - INFO - use gpu :[0]
+2026-02-07 22:25:42,313 - root - INFO - Took 0.00 seconds to load the model.
+2026-02-07 22:25:42,314 - root - INFO - Learning rate: 0.01, Base net learning rate: 0.01, Extra Layers learning rate: 0.01.
+2026-02-07 22:25:42,314 - root - INFO - Uses MultiStepLR scheduler.
+2026-02-07 22:25:42,315 - root - INFO - Start training from epoch 0.
+................................................................................2026-02-07 22:26:01,320 - root - INFO - lr rate :0.01
+Processing ...
+2026-02-07 22:26:01,320 - root - INFO - lr rate :0.01
+2026-02-07 22:26:03,741 - root - INFO - Epoch: 0, Test Loss: 6.9059, Test Regression Loss 3.9008, Test Classification Loss: 3.0050, Test Accuracy: 76.3571
+2026-02-07 22:26:03,768 - root - INFO - Saved model ./models/train-version-slim\slim-Epoch-0-Loss-6.905880761146546\slim-Epoch-0-Loss-6.905880761146546.pth

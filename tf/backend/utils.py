@@ -8,11 +8,18 @@ import torch
 def post_processing(reg_list, cls_list, num_classes, image_size, feature_map_wh_list, min_boxes,
                     center_variance, size_variance,
                     conf_threshold=0.6, nms_max_output_size=100, nms_iou_threshold=0.3, top_k=100):
-    reg_list = [tf.keras.layers.Reshape([-1, 4])(reg) for reg in reg_list]
-    cls_list = [tf.keras.layers.Reshape([-1, num_classes])(cls) for cls in cls_list]
 
-    reg = tf.keras.layers.Concatenate(axis=1)(reg_list)
-    cls = tf.keras.layers.Concatenate(axis=1)(cls_list)
+    shapes = [512, 128, 48]
+    input_shapes = [(15,20),(8,10),(4,5)]
+
+    for r in reg_list:
+        print(r.shape)
+
+    reg_list = [tf.reshape(reg, shape=(int(shape/4),4)) for reg,shape, input_shape in zip(reg_list, shapes, input_shapes)]
+    cls_list = [tf.reshape(cls, shape=(int(shape/4), num_classes)) for cls,shape, input_shape in zip(cls_list, shapes, input_shapes)]
+
+    reg = tf.keras.layers.Concatenate(axis=0)(reg_list)
+    cls = tf.keras.layers.Concatenate(axis=0)(cls_list)
 
     # post process
     cls = tf.keras.layers.Softmax(axis=-1)(cls)
@@ -20,23 +27,6 @@ def post_processing(reg_list, cls_list, num_classes, image_size, feature_map_wh_
                             center_variance, size_variance)
 
     result = tf.keras.layers.Concatenate(axis=-1)([cls, loc])
-
-    # confidence thresholding
-    mask = conf_threshold < cls[..., 1]
-    result = tf.boolean_mask(tensor=result, mask=mask)
-
-    # non-maximum suppression
-    mask = tf.image.non_max_suppression(boxes=result[..., -4:],
-                                        scores=result[..., 1],
-                                        max_output_size=nms_max_output_size,
-                                        iou_threshold=nms_iou_threshold,
-                                        name='non_maximum_suppresion')
-    result = tf.gather(params=result, indices=mask, axis=0)
-
-    # top-k filtering
-    top_k_value = tf.math.minimum(tf.constant(top_k), tf.shape(result)[0])
-    mask = tf.nn.top_k(result[..., 1], k=top_k_value, sorted=True).indices
-    result = tf.gather(params=result, indices=mask, axis=0)
 
     return result
 

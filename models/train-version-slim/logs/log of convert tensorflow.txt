@@ -1,0 +1,368 @@
+python convert_tensorflow.py --net_type slim
+2026-04-21 09:20:50.706017: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+(None, 8, 8, 8)
+(None, 4, 4, 8)
+(None, 2, 2, 12)
+priors nums:172
+Model: "model"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to
+==================================================================================================
+ input_1 (InputLayer)           [(None, 128, 128, 3  0           []
+                                )]
+
+ basenet.0.0_padding (ZeroPaddi  (None, 130, 130, 3)  0          ['input_1[0][0]']
+ ng2D)
+
+ basenet.0.0_conv (Conv2D)      (None, 64, 64, 16)   432         ['basenet.0.0_padding[0][0]']
+
+ basenet.0.1_bn (BatchNormaliza  (None, 64, 64, 16)  64          ['basenet.0.0_conv[0][0]']
+ tion)
+
+ basenet.0.2_relu (ReLU)        (None, 64, 64, 16)   0           ['basenet.0.1_bn[0][0]']
+
+ basenet.1.0_padding (ZeroPaddi  (None, 66, 66, 16)  0           ['basenet.0.2_relu[0][0]']
+ ng2D)
+
+ basenet.1.0_dconv (DepthwiseCo  (None, 64, 64, 16)  144         ['basenet.1.0_padding[0][0]']
+ nv2D)
+
+ basenet.1.1_bn (BatchNormaliza  (None, 64, 64, 16)  64          ['basenet.1.0_dconv[0][0]']
+ tion)
+
+ basenet.1.2_relu (ReLU)        (None, 64, 64, 16)   0           ['basenet.1.1_bn[0][0]']
+
+ basenet.1.3_conv (Conv2D)      (None, 64, 64, 32)   512         ['basenet.1.2_relu[0][0]']
+
+ basenet.1.4_bn (BatchNormaliza  (None, 64, 64, 32)  128         ['basenet.1.3_conv[0][0]']
+ tion)
+
+ basenet.1.5_relu (ReLU)        (None, 64, 64, 32)   0           ['basenet.1.4_bn[0][0]']
+
+ basenet.2.0_padding (ZeroPaddi  (None, 66, 66, 32)  0           ['basenet.1.5_relu[0][0]']
+ ng2D)
+
+ basenet.2.0_dconv (DepthwiseCo  (None, 32, 32, 32)  288         ['basenet.2.0_padding[0][0]']
+ nv2D)
+
+ basenet.2.1_bn (BatchNormaliza  (None, 32, 32, 32)  128         ['basenet.2.0_dconv[0][0]']
+ tion)
+
+ basenet.2.2_relu (ReLU)        (None, 32, 32, 32)   0           ['basenet.2.1_bn[0][0]']
+
+ basenet.2.3_conv (Conv2D)      (None, 32, 32, 32)   1024        ['basenet.2.2_relu[0][0]']
+
+ basenet.2.4_bn (BatchNormaliza  (None, 32, 32, 32)  128         ['basenet.2.3_conv[0][0]']
+ tion)
+
+ basenet.2.5_relu (ReLU)        (None, 32, 32, 32)   0           ['basenet.2.4_bn[0][0]']
+
+ basenet.3.0_padding (ZeroPaddi  (None, 34, 34, 32)  0           ['basenet.2.5_relu[0][0]']
+ ng2D)
+
+ basenet.3.0_dconv (DepthwiseCo  (None, 32, 32, 32)  288         ['basenet.3.0_padding[0][0]']
+ nv2D)
+
+ basenet.3.1_bn (BatchNormaliza  (None, 32, 32, 32)  128         ['basenet.3.0_dconv[0][0]']
+ tion)
+
+ basenet.3.2_relu (ReLU)        (None, 32, 32, 32)   0           ['basenet.3.1_bn[0][0]']
+
+ basenet.3.3_conv (Conv2D)      (None, 32, 32, 32)   1024        ['basenet.3.2_relu[0][0]']
+
+ basenet.3.4_bn (BatchNormaliza  (None, 32, 32, 32)  128         ['basenet.3.3_conv[0][0]']
+ tion)
+
+ basenet.3.5_relu (ReLU)        (None, 32, 32, 32)   0           ['basenet.3.4_bn[0][0]']
+
+ basenet.4.0_padding (ZeroPaddi  (None, 34, 34, 32)  0           ['basenet.3.5_relu[0][0]']
+ ng2D)
+
+ basenet.4.0_dconv (DepthwiseCo  (None, 16, 16, 32)  288         ['basenet.4.0_padding[0][0]']
+ nv2D)
+
+ basenet.4.1_bn (BatchNormaliza  (None, 16, 16, 32)  128         ['basenet.4.0_dconv[0][0]']
+ tion)
+
+ basenet.4.2_relu (ReLU)        (None, 16, 16, 32)   0           ['basenet.4.1_bn[0][0]']
+
+ basenet.4.3_conv (Conv2D)      (None, 16, 16, 64)   2048        ['basenet.4.2_relu[0][0]']
+
+ basenet.4.4_bn (BatchNormaliza  (None, 16, 16, 64)  256         ['basenet.4.3_conv[0][0]']
+ tion)
+
+ basenet.4.5_relu (ReLU)        (None, 16, 16, 64)   0           ['basenet.4.4_bn[0][0]']
+
+ basenet.5.0_padding (ZeroPaddi  (None, 18, 18, 64)  0           ['basenet.4.5_relu[0][0]']
+ ng2D)
+
+ basenet.5.0_dconv (DepthwiseCo  (None, 16, 16, 64)  576         ['basenet.5.0_padding[0][0]']
+ nv2D)
+
+ basenet.5.1_bn (BatchNormaliza  (None, 16, 16, 64)  256         ['basenet.5.0_dconv[0][0]']
+ tion)
+
+ basenet.5.2_relu (ReLU)        (None, 16, 16, 64)   0           ['basenet.5.1_bn[0][0]']
+
+ basenet.5.3_conv (Conv2D)      (None, 16, 16, 64)   4096        ['basenet.5.2_relu[0][0]']
+
+ basenet.5.4_bn (BatchNormaliza  (None, 16, 16, 64)  256         ['basenet.5.3_conv[0][0]']
+ tion)
+
+ basenet.5.5_relu (ReLU)        (None, 16, 16, 64)   0           ['basenet.5.4_bn[0][0]']
+
+ basenet.6.0_padding (ZeroPaddi  (None, 18, 18, 64)  0           ['basenet.5.5_relu[0][0]']
+ ng2D)
+
+ basenet.6.0_dconv (DepthwiseCo  (None, 16, 16, 64)  576         ['basenet.6.0_padding[0][0]']
+ nv2D)
+
+ basenet.6.1_bn (BatchNormaliza  (None, 16, 16, 64)  256         ['basenet.6.0_dconv[0][0]']
+ tion)
+
+ basenet.6.2_relu (ReLU)        (None, 16, 16, 64)   0           ['basenet.6.1_bn[0][0]']
+
+ basenet.6.3_conv (Conv2D)      (None, 16, 16, 64)   4096        ['basenet.6.2_relu[0][0]']
+
+ basenet.6.4_bn (BatchNormaliza  (None, 16, 16, 64)  256         ['basenet.6.3_conv[0][0]']
+ tion)
+
+ basenet.6.5_relu (ReLU)        (None, 16, 16, 64)   0           ['basenet.6.4_bn[0][0]']
+
+ basenet.7.0_padding (ZeroPaddi  (None, 18, 18, 64)  0           ['basenet.6.5_relu[0][0]']
+ ng2D)
+
+ basenet.7.0_dconv (DepthwiseCo  (None, 16, 16, 64)  576         ['basenet.7.0_padding[0][0]']
+ nv2D)
+
+ basenet.7.1_bn (BatchNormaliza  (None, 16, 16, 64)  256         ['basenet.7.0_dconv[0][0]']
+ tion)
+
+ basenet.7.2_relu (ReLU)        (None, 16, 16, 64)   0           ['basenet.7.1_bn[0][0]']
+
+ basenet.7.3_conv (Conv2D)      (None, 16, 16, 64)   4096        ['basenet.7.2_relu[0][0]']
+
+ basenet.7.4_bn (BatchNormaliza  (None, 16, 16, 64)  256         ['basenet.7.3_conv[0][0]']
+ tion)
+
+ basenet.7.5_relu (ReLU)        (None, 16, 16, 64)   0           ['basenet.7.4_bn[0][0]']
+
+ basenet.8.0_padding (ZeroPaddi  (None, 18, 18, 64)  0           ['basenet.7.5_relu[0][0]']
+ ng2D)
+
+ basenet.8.0_dconv (DepthwiseCo  (None, 8, 8, 64)    576         ['basenet.8.0_padding[0][0]']
+ nv2D)
+
+ basenet.8.1_bn (BatchNormaliza  (None, 8, 8, 64)    256         ['basenet.8.0_dconv[0][0]']
+ tion)
+
+ basenet.8.2_relu (ReLU)        (None, 8, 8, 64)     0           ['basenet.8.1_bn[0][0]']
+
+ basenet.8.3_conv (Conv2D)      (None, 8, 8, 128)    8192        ['basenet.8.2_relu[0][0]']
+
+ basenet.8.4_bn (BatchNormaliza  (None, 8, 8, 128)   512         ['basenet.8.3_conv[0][0]']
+ tion)
+
+ basenet.8.5_relu (ReLU)        (None, 8, 8, 128)    0           ['basenet.8.4_bn[0][0]']
+
+ basenet.9.0_padding (ZeroPaddi  (None, 10, 10, 128)  0          ['basenet.8.5_relu[0][0]']
+ ng2D)
+
+ basenet.9.0_dconv (DepthwiseCo  (None, 8, 8, 128)   1152        ['basenet.9.0_padding[0][0]']
+ nv2D)
+
+ basenet.9.1_bn (BatchNormaliza  (None, 8, 8, 128)   512         ['basenet.9.0_dconv[0][0]']
+ tion)
+
+ basenet.9.2_relu (ReLU)        (None, 8, 8, 128)    0           ['basenet.9.1_bn[0][0]']
+
+ basenet.9.3_conv (Conv2D)      (None, 8, 8, 128)    16384       ['basenet.9.2_relu[0][0]']
+
+ basenet.9.4_bn (BatchNormaliza  (None, 8, 8, 128)   512         ['basenet.9.3_conv[0][0]']
+ tion)
+
+ basenet.9.5_relu (ReLU)        (None, 8, 8, 128)    0           ['basenet.9.4_bn[0][0]']
+
+ basenet.10.0_padding (ZeroPadd  (None, 10, 10, 128)  0          ['basenet.9.5_relu[0][0]']
+ ing2D)
+
+ basenet.10.0_dconv (DepthwiseC  (None, 8, 8, 128)   1152        ['basenet.10.0_padding[0][0]']
+ onv2D)
+
+ basenet.10.1_bn (BatchNormaliz  (None, 8, 8, 128)   512         ['basenet.10.0_dconv[0][0]']
+ ation)
+
+ basenet.10.2_relu (ReLU)       (None, 8, 8, 128)    0           ['basenet.10.1_bn[0][0]']
+
+ basenet.10.3_conv (Conv2D)     (None, 8, 8, 128)    16384       ['basenet.10.2_relu[0][0]']
+
+ basenet.10.4_bn (BatchNormaliz  (None, 8, 8, 128)   512         ['basenet.10.3_conv[0][0]']
+ ation)
+
+ basenet.10.5_relu (ReLU)       (None, 8, 8, 128)    0           ['basenet.10.4_bn[0][0]']
+
+ basenet.11.0_padding (ZeroPadd  (None, 10, 10, 128)  0          ['basenet.10.5_relu[0][0]']
+ ing2D)
+
+ basenet.11.0_dconv (DepthwiseC  (None, 4, 4, 128)   1152        ['basenet.11.0_padding[0][0]']
+ onv2D)
+
+ basenet.11.1_bn (BatchNormaliz  (None, 4, 4, 128)   512         ['basenet.11.0_dconv[0][0]']
+ ation)
+
+ basenet.11.2_relu (ReLU)       (None, 4, 4, 128)    0           ['basenet.11.1_bn[0][0]']
+
+ basenet.11.3_conv (Conv2D)     (None, 4, 4, 256)    32768       ['basenet.11.2_relu[0][0]']
+
+ basenet.11.4_bn (BatchNormaliz  (None, 4, 4, 256)   1024        ['basenet.11.3_conv[0][0]']
+ ation)
+
+ basenet.11.5_relu (ReLU)       (None, 4, 4, 256)    0           ['basenet.11.4_bn[0][0]']
+
+ basenet.12.0_padding (ZeroPadd  (None, 6, 6, 256)   0           ['basenet.11.5_relu[0][0]']
+ ing2D)
+
+ basenet.12.0_dconv (DepthwiseC  (None, 4, 4, 256)   2304        ['basenet.12.0_padding[0][0]']
+ onv2D)
+
+ basenet.12.1_bn (BatchNormaliz  (None, 4, 4, 256)   1024        ['basenet.12.0_dconv[0][0]']
+ ation)
+
+ basenet.12.2_relu (ReLU)       (None, 4, 4, 256)    0           ['basenet.12.1_bn[0][0]']
+
+ basenet.12.3_conv (Conv2D)     (None, 4, 4, 256)    65536       ['basenet.12.2_relu[0][0]']
+
+ basenet.12.4_bn (BatchNormaliz  (None, 4, 4, 256)   1024        ['basenet.12.3_conv[0][0]']
+ ation)
+
+ basenet.12.5_relu (ReLU)       (None, 4, 4, 256)    0           ['basenet.12.4_bn[0][0]']
+
+ extras_convbias (Conv2D)       (None, 4, 4, 64)     16448       ['basenet.12.5_relu[0][0]']
+
+ extras_relu1 (ReLU)            (None, 4, 4, 64)     0           ['extras_convbias[0][0]']
+
+ extras_sep_dconv_padding (Zero  (None, 6, 6, 64)    0           ['extras_relu1[0][0]']
+ Padding2D)
+
+ extras_sep_dconvbias (Depthwis  (None, 2, 2, 64)    640         ['extras_sep_dconv_padding[0][0]'
+ eConv2D)                                                        ]
+
+ extras_sep_relu (ReLU)         (None, 2, 2, 64)     0           ['extras_sep_dconvbias[0][0]']
+
+ reg_1_sep_dconv_padding (ZeroP  (None, 10, 10, 128)  0          ['basenet.10.5_relu[0][0]']
+ adding2D)
+
+ reg_2_sep_dconv_padding (ZeroP  (None, 6, 6, 256)   0           ['basenet.12.5_relu[0][0]']
+ adding2D)
+
+ extras_sep_convbias (Conv2D)   (None, 2, 2, 256)    16640       ['extras_sep_relu[0][0]']
+
+ reg_1_sep_dconvbias (Depthwise  (None, 8, 8, 128)   1280        ['reg_1_sep_dconv_padding[0][0]']
+ Conv2D)
+
+ reg_2_sep_dconvbias (Depthwise  (None, 4, 4, 256)   2560        ['reg_2_sep_dconv_padding[0][0]']
+ Conv2D)
+
+ extras_relu2 (ReLU)            (None, 2, 2, 256)    0           ['extras_sep_convbias[0][0]']
+
+ reg_1_sep_relu (ReLU)          (None, 8, 8, 128)    0           ['reg_1_sep_dconvbias[0][0]']
+
+ reg_2_sep_relu (ReLU)          (None, 4, 4, 256)    0           ['reg_2_sep_dconvbias[0][0]']
+
+ reg_1_sep_convbias (Conv2D)    (None, 8, 8, 8)      1032        ['reg_1_sep_relu[0][0]']
+
+ reg_2_sep_convbias (Conv2D)    (None, 4, 4, 8)      2056        ['reg_2_sep_relu[0][0]']
+
+ reg_3_convbias (Conv2D)        (None, 2, 2, 12)     27660       ['extras_relu2[0][0]']
+
+ tf.reshape (TFOpLambda)        (128, 4)             0           ['reg_1_sep_convbias[0][0]']
+
+ tf.reshape_1 (TFOpLambda)      (32, 4)              0           ['reg_2_sep_convbias[0][0]']
+
+ tf.reshape_2 (TFOpLambda)      (12, 4)              0           ['reg_3_convbias[0][0]']
+
+ concatenate (Concatenate)      (172, 4)             0           ['tf.reshape[0][0]',
+                                                                  'tf.reshape_1[0][0]',
+                                                                  'tf.reshape_2[0][0]']
+
+ tf.__operators__.getitem_1 (Sl  (172, 2)            0           ['concatenate[0][0]']
+ icingOpLambda)
+
+ cls_1_sep_dconv_padding (ZeroP  (None, 10, 10, 128)  0          ['basenet.10.5_relu[0][0]']
+ adding2D)
+
+ cls_2_sep_dconv_padding (ZeroP  (None, 6, 6, 256)   0           ['basenet.12.5_relu[0][0]']
+ adding2D)
+
+ tf.__operators__.getitem (Slic  (172, 2)            0           ['concatenate[0][0]']
+ ingOpLambda)
+
+ tf.math.multiply_2 (TFOpLambda  (172, 2)            0           ['tf.__operators__.getitem_1[0][0
+ )                                                               ]']
+
+ cls_1_sep_dconvbias (Depthwise  (None, 8, 8, 128)   1280        ['cls_1_sep_dconv_padding[0][0]']
+ Conv2D)
+
+ cls_2_sep_dconvbias (Depthwise  (None, 4, 4, 256)   2560        ['cls_2_sep_dconv_padding[0][0]']
+ Conv2D)
+
+ tf.math.multiply (TFOpLambda)  (172, 2)             0           ['tf.__operators__.getitem[0][0]'
+                                                                 ]
+
+ tf.math.exp (TFOpLambda)       (172, 2)             0           ['tf.math.multiply_2[0][0]']
+
+ cls_1_sep_relu (ReLU)          (None, 8, 8, 128)    0           ['cls_1_sep_dconvbias[0][0]']
+
+ cls_2_sep_relu (ReLU)          (None, 4, 4, 256)    0           ['cls_2_sep_dconvbias[0][0]']
+
+ tf.math.multiply_1 (TFOpLambda  (172, 2)            0           ['tf.math.multiply[0][0]']
+ )
+
+ tf.math.multiply_3 (TFOpLambda  (172, 2)            0           ['tf.math.exp[0][0]']
+ )
+
+ cls_1_sep_convbias (Conv2D)    (None, 8, 8, 6)      774         ['cls_1_sep_relu[0][0]']
+
+ cls_2_sep_convbias (Conv2D)    (None, 4, 4, 6)      1542        ['cls_2_sep_relu[0][0]']
+
+ cls_3_convbias (Conv2D)        (None, 2, 2, 9)      20745       ['extras_relu2[0][0]']
+
+ tf.__operators__.add (TFOpLamb  (172, 2)            0           ['tf.math.multiply_1[0][0]']
+ da)
+
+ tf.math.truediv (TFOpLambda)   (172, 2)             0           ['tf.math.multiply_3[0][0]']
+
+ tf.math.truediv_1 (TFOpLambda)  (172, 2)            0           ['tf.math.multiply_3[0][0]']
+
+ tf.reshape_3 (TFOpLambda)      (128, 3)             0           ['cls_1_sep_convbias[0][0]']
+
+ tf.reshape_4 (TFOpLambda)      (32, 3)              0           ['cls_2_sep_convbias[0][0]']
+
+ tf.reshape_5 (TFOpLambda)      (12, 3)              0           ['cls_3_convbias[0][0]']
+
+ tf.math.subtract (TFOpLambda)  (172, 2)             0           ['tf.__operators__.add[0][0]',
+                                                                  'tf.math.truediv[0][0]']
+
+ tf.__operators__.add_1 (TFOpLa  (172, 2)            0           ['tf.__operators__.add[0][0]',
+ mbda)                                                            'tf.math.truediv_1[0][0]']
+
+ concatenate_1 (Concatenate)    (172, 3)             0           ['tf.reshape_3[0][0]',
+                                                                  'tf.reshape_4[0][0]',
+                                                                  'tf.reshape_5[0][0]']
+
+ tf.concat (TFOpLambda)         (172, 4)             0           ['tf.math.subtract[0][0]',
+                                                                  'tf.__operators__.add_1[0][0]']
+
+ softmax (Softmax)              (172, 3)             0           ['concatenate_1[0][0]']
+
+ tf.clip_by_value (TFOpLambda)  (172, 4)             0           ['tf.concat[0][0]']
+
+ concatenate_2 (Concatenate)    (172, 7)             0           ['softmax[0][0]',
+                                                                  'tf.clip_by_value[0][0]']
+
+==================================================================================================
+Total params: 269,969
+Trainable params: 265,425
+Non-trainable params: 4,544
+__________________________________________________________________________________________________

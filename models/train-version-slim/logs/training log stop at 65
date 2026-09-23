@@ -1,0 +1,141 @@
+priors nums:4420
+2025-12-03 13:42:39,950 - root - INFO - Use Cuda.
+2025-12-03 13:42:39,951 - root - INFO - Namespace(dataset_type='voc', datasets=['./data/wider_face_add_lm_10_10'], validation_dataset='./data/wider_face_add_lm_10_10', balance_data=False, net='slim', freeze_base_net=False, freeze_net=False, lr=0.01, momentum=0.9, weight_decay=0.0005, gamma=0.1, base_net_lr=None, extra_layers_lr=None, base_net=None, pretrained_ssd=None, resume=None, scheduler='multi-step', milestones='95,150', t_max=120, batch_size=4, num_epochs=150, num_workers=0, validation_epochs=5, debug_steps=100, use_cuda=True, checkpoint_folder='./models/train-version-slim', log_dir='./models/train-version-slim/logs', cuda_index='0', power=2, overlap_threshold=0.35, optimizer_type='SGD', input_size=320, quan_size=128)
+2025-12-03 13:42:39,952 - root - INFO - Prepare training datasets.
+2025-12-03 13:42:39,952 - root - INFO - No labels file, using default VOC classes.
+2025-12-03 13:42:39,953 - root - INFO - Stored labels into file ./models/train-version-slim\voc-model-labels.txt.
+2025-12-03 13:42:39,953 - root - INFO - Train dataset size: 160
+2025-12-03 13:42:39,953 - root - INFO - Prepare Validation datasets.
+2025-12-03 13:42:39,953 - root - INFO - No labels file, using default VOC classes.
+2025-12-03 13:42:39,954 - root - INFO - validation dataset size: 40
+2025-12-03 13:42:39,954 - root - INFO - Build network.
+2025-12-03 13:42:40,104 - root - INFO - use gpu :[0]
+2025-12-03 13:42:40,104 - root - INFO - Took 0.00 seconds to load the model.
+2025-12-03 13:42:40,106 - root - INFO - Learning rate: 0.01, Base net learning rate: 0.01, Extra Layers learning rate: 0.01.
+2025-12-03 13:42:40,106 - root - INFO - Uses MultiStepLR scheduler.
+2025-12-03 13:42:40,106 - root - INFO - Start training from epoch 0.
+........................................2025-12-03 13:42:47,470 - root - INFO - lr rate :0.01
+Processing ...
+2025-12-03 13:42:47,470 - root - INFO - lr rate :0.01
+2025-12-03 13:42:48,065 - root - INFO - Epoch: 0, Test Loss: 5.7380, Test Regression Loss 3.1901, Test Classification Loss: 2.5479, Test Accuracy: 76.3132
+2025-12-03 13:42:48,086 - root - INFO - Saved model ./models/train-version-slim\slim-Epoch-0-Loss-5.737981510162354\slim-Epoch-0-Loss-5.737981510162354.pth
+........................................2025-12-03 13:42:54,968 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:43:01,687 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:43:07,848 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:43:14,182 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:43:20,076 - root - INFO - lr rate :0.01
+Processing ...
+2025-12-03 13:43:20,076 - root - INFO - lr rate :0.01
+2025-12-03 13:43:20,613 - root - INFO - Epoch: 5, Test Loss: 4.1643, Test Regression Loss 2.0763, Test Classification Loss: 2.0880, Test Accuracy: 76.3585
+2025-12-03 13:43:20,637 - root - INFO - Saved model ./models/train-version-slim\slim-Epoch-5-Loss-4.164256978034973\slim-Epoch-5-Loss-4.164256978034973.pth
+........................................2025-12-03 13:43:26,935 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:43:33,014 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:43:39,404 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:43:46,242 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:43:52,251 - root - INFO - lr rate :0.01
+Processing ...
+2025-12-03 13:43:52,251 - root - INFO - lr rate :0.01
+2025-12-03 13:43:52,801 - root - INFO - Epoch: 10, Test Loss: 3.5942, Test Regression Loss 1.6642, Test Classification Loss: 1.9301, Test Accuracy: 76.3981
+2025-12-03 13:43:52,822 - root - INFO - Saved model ./models/train-version-slim\slim-Epoch-10-Loss-3.594240975379944\slim-Epoch-10-Loss-3.594240975379944.pth
+........................................2025-12-03 13:43:59,685 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:44:06,304 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:44:13,164 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:44:19,937 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:44:26,698 - root - INFO - lr rate :0.01
+Processing ...
+2025-12-03 13:44:26,698 - root - INFO - lr rate :0.01
+2025-12-03 13:44:27,296 - root - INFO - Epoch: 15, Test Loss: 3.5524, Test Regression Loss 1.5071, Test Classification Loss: 2.0453, Test Accuracy: 76.3851
+2025-12-03 13:44:27,319 - root - INFO - Saved model ./models/train-version-slim\slim-Epoch-15-Loss-3.5524250984191896\slim-Epoch-15-Loss-3.5524250984191896.pth
+........................................2025-12-03 13:44:34,412 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:44:40,772 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:44:47,717 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:44:54,592 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:45:01,131 - root - INFO - lr rate :0.01
+Processing ...
+2025-12-03 13:45:01,131 - root - INFO - lr rate :0.01
+2025-12-03 13:45:01,746 - root - INFO - Epoch: 20, Test Loss: 2.4512, Test Regression Loss 1.0224, Test Classification Loss: 1.4288, Test Accuracy: 76.4422
+2025-12-03 13:45:01,770 - root - INFO - Saved model ./models/train-version-slim\slim-Epoch-20-Loss-2.451237988471985\slim-Epoch-20-Loss-2.451237988471985.pth
+........................................2025-12-03 13:45:08,670 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:45:15,156 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:45:22,141 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:45:28,796 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:45:34,648 - root - INFO - lr rate :0.01
+Processing ...
+2025-12-03 13:45:34,648 - root - INFO - lr rate :0.01
+2025-12-03 13:45:35,277 - root - INFO - Epoch: 25, Test Loss: 2.2743, Test Regression Loss 0.9475, Test Classification Loss: 1.3269, Test Accuracy: 76.4592
+2025-12-03 13:45:35,302 - root - INFO - Saved model ./models/train-version-slim\slim-Epoch-25-Loss-2.274309551715851\slim-Epoch-25-Loss-2.274309551715851.pth
+........................................2025-12-03 13:45:42,183 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:45:48,860 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:45:55,712 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:46:02,420 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:46:08,884 - root - INFO - lr rate :0.01
+Processing ...
+2025-12-03 13:46:08,884 - root - INFO - lr rate :0.01
+2025-12-03 13:46:09,490 - root - INFO - Epoch: 30, Test Loss: 2.1614, Test Regression Loss 0.8849, Test Classification Loss: 1.2765, Test Accuracy: 76.4660
+2025-12-03 13:46:09,513 - root - INFO - Saved model ./models/train-version-slim\slim-Epoch-30-Loss-2.161368489265442\slim-Epoch-30-Loss-2.161368489265442.pth
+........................................2025-12-03 13:46:16,942 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:46:23,724 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:46:30,267 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:46:37,256 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:46:43,934 - root - INFO - lr rate :0.01
+Processing ...
+2025-12-03 13:46:43,934 - root - INFO - lr rate :0.01
+2025-12-03 13:46:44,504 - root - INFO - Epoch: 35, Test Loss: 2.3684, Test Regression Loss 1.1113, Test Classification Loss: 1.2571, Test Accuracy: 76.4676
+2025-12-03 13:46:44,531 - root - INFO - Saved model ./models/train-version-slim\slim-Epoch-35-Loss-2.368382143974304\slim-Epoch-35-Loss-2.368382143974304.pth
+........................................2025-12-03 13:46:51,291 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:46:58,085 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:47:04,340 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:47:11,118 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:47:17,823 - root - INFO - lr rate :0.01
+Processing ...
+2025-12-03 13:47:17,823 - root - INFO - lr rate :0.01
+2025-12-03 13:47:18,419 - root - INFO - Epoch: 40, Test Loss: 1.9803, Test Regression Loss 0.8356, Test Classification Loss: 1.1447, Test Accuracy: 76.4773
+2025-12-03 13:47:18,443 - root - INFO - Saved model ./models/train-version-slim\slim-Epoch-40-Loss-1.980304980278015\slim-Epoch-40-Loss-1.980304980278015.pth
+........................................2025-12-03 13:47:25,195 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:47:31,972 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:47:38,669 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:47:45,135 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:47:51,711 - root - INFO - lr rate :0.01
+Processing ...
+2025-12-03 13:47:51,711 - root - INFO - lr rate :0.01
+2025-12-03 13:47:52,325 - root - INFO - Epoch: 45, Test Loss: 1.6962, Test Regression Loss 0.6627, Test Classification Loss: 1.0335, Test Accuracy: 76.4886
+2025-12-03 13:47:52,347 - root - INFO - Saved model ./models/train-version-slim\slim-Epoch-45-Loss-1.6961562752723693\slim-Epoch-45-Loss-1.6961562752723693.pth
+........................................2025-12-03 13:47:58,956 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:48:05,388 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:48:12,370 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:48:19,573 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:48:26,303 - root - INFO - lr rate :0.01
+Processing ...
+2025-12-03 13:48:26,303 - root - INFO - lr rate :0.01
+2025-12-03 13:48:26,788 - root - INFO - Epoch: 50, Test Loss: 1.9633, Test Regression Loss 0.7983, Test Classification Loss: 1.1650, Test Accuracy: 76.4840
+2025-12-03 13:48:26,809 - root - INFO - Saved model ./models/train-version-slim\slim-Epoch-50-Loss-1.9632703185081481\slim-Epoch-50-Loss-1.9632703185081481.pth
+........................................2025-12-03 13:48:33,715 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:48:40,395 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:48:46,765 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:48:53,402 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:49:00,344 - root - INFO - lr rate :0.01
+Processing ...
+2025-12-03 13:49:00,344 - root - INFO - lr rate :0.01
+2025-12-03 13:49:00,945 - root - INFO - Epoch: 55, Test Loss: 1.7220, Test Regression Loss 0.6133, Test Classification Loss: 1.1087, Test Accuracy: 76.4925
+2025-12-03 13:49:00,977 - root - INFO - Saved model ./models/train-version-slim\slim-Epoch-55-Loss-1.7219844818115235\slim-Epoch-55-Loss-1.7219844818115235.pth
+........................................2025-12-03 13:49:07,487 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:49:14,396 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:49:21,174 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:49:27,167 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:49:34,020 - root - INFO - lr rate :0.01
+Processing ...
+2025-12-03 13:49:34,020 - root - INFO - lr rate :0.01
+2025-12-03 13:49:34,547 - root - INFO - Epoch: 60, Test Loss: 1.7324, Test Regression Loss 0.6117, Test Classification Loss: 1.1207, Test Accuracy: 76.4784
+2025-12-03 13:49:34,575 - root - INFO - Saved model ./models/train-version-slim\slim-Epoch-60-Loss-1.7324313044548034\slim-Epoch-60-Loss-1.7324313044548034.pth
+........................................2025-12-03 13:49:41,934 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:49:48,394 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:49:55,272 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:50:01,915 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:50:08,591 - root - INFO - lr rate :0.01
+Processing ...
+2025-12-03 13:50:08,591 - root - INFO - lr rate :0.01
+2025-12-03 13:50:09,211 - root - INFO - Epoch: 65, Test Loss: 1.8442, Test Regression Loss 0.6312, Test Classification Loss: 1.2130, Test Accuracy: 76.4880
+2025-12-03 13:50:09,233 - root - INFO - Saved model ./models/train-version-slim\slim-Epoch-65-Loss-1.8441649973392487\slim-Epoch-65-Loss-1.8441649973392487.pth
+........................................2025-12-03 13:50:16,329 - root - INFO - lr rate :0.01
+........................................2025-12-03 13:50:23,070 - root - INFO - lr rate :0.01
+.............................

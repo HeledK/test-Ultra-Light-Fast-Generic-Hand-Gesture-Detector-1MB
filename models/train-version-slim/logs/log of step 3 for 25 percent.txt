@@ -1,0 +1,441 @@
+Fine-tuning for 20 epochs on cuda:0 ...
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-29 22:03:18,627 - INFO -   [0:100] loss=2.0302  reg=0.7576  clf=1.2726
+2026-04-29 22:10:30,593 - INFO -   [0:200] loss=1.5647  reg=0.5698  clf=0.9949
+2026-04-29 22:17:39,225 - INFO -   [0:300] loss=1.5565  reg=0.5310  clf=1.0255
+2026-04-29 22:24:36,590 - INFO -   [0:400] loss=1.3508  reg=0.4755  clf=0.8753
+2026-04-29 22:31:47,179 - INFO -   [0:500] loss=1.3943  reg=0.5147  clf=0.8795
+2026-04-29 22:38:46,602 - INFO -   [0:600] loss=1.6745  reg=0.6670  clf=1.0075
+2026-04-29 22:45:48,070 - INFO -   [0:700] loss=1.6058  reg=0.6266  clf=0.9792
+2026-04-29 22:48:34,768 - INFO - Epoch   0/20  train=1.7106 (reg=0.6238 clf=1.0868)  lr=0.009938
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-29 22:50:18,640 - INFO -            val=1.1239  fg_acc=80.74%
+2026-04-29 22:50:18,687 - INFO -   ✓ Best saved → models/pruning\finetuned_best.pth
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-29 22:58:18,671 - INFO -   [1:100] loss=1.2175  reg=0.4441  clf=0.7735
+2026-04-29 23:05:49,711 - INFO -   [1:200] loss=1.4688  reg=0.5340  clf=0.9348
+2026-04-29 23:13:01,790 - INFO -   [1:300] loss=1.3716  reg=0.4579  clf=0.9137
+2026-04-29 23:20:02,253 - INFO -   [1:400] loss=1.6845  reg=0.6485  clf=1.0360
+2026-04-29 23:27:14,042 - INFO -   [1:500] loss=1.5065  reg=0.5292  clf=0.9773
+2026-04-29 23:34:21,179 - INFO -   [1:600] loss=1.3776  reg=0.5078  clf=0.8698
+2026-04-29 23:41:11,883 - INFO -   [1:700] loss=1.1536  reg=0.3765  clf=0.7772
+2026-04-29 23:44:04,126 - INFO - Epoch   1/20  train=1.4428 (reg=0.5161 clf=0.9267)  lr=0.009755
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-29 23:45:47,902 - INFO -            val=1.2111  fg_acc=80.15%
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-29 23:53:36,716 - INFO -   [2:100] loss=1.6042  reg=0.5719  clf=1.0323
+2026-04-30 00:00:46,555 - INFO -   [2:200] loss=1.5392  reg=0.5311  clf=1.0081
+2026-04-30 00:07:44,776 - INFO -   [2:300] loss=1.2326  reg=0.4389  clf=0.7938
+2026-04-30 00:14:41,847 - INFO -   [2:400] loss=1.3093  reg=0.5064  clf=0.8029
+2026-04-30 00:21:43,622 - INFO -   [2:500] loss=1.2232  reg=0.4350  clf=0.7882
+2026-04-30 00:28:43,476 - INFO -   [2:600] loss=1.7603  reg=0.6853  clf=1.0749
+2026-04-30 00:36:22,932 - INFO -   [2:700] loss=1.3518  reg=0.4626  clf=0.8892
+2026-04-30 00:39:42,586 - INFO - Epoch   2/20  train=1.3979 (reg=0.4986 clf=0.8993)  lr=0.009455
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 00:41:40,164 - INFO -            val=1.1231  fg_acc=83.27%
+2026-04-30 00:41:40,225 - INFO -   ✓ Best saved → models/pruning\finetuned_best.pth
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 00:50:21,998 - INFO -   [3:100] loss=1.2211  reg=0.4242  clf=0.7968
+2026-04-30 00:57:42,178 - INFO -   [3:200] loss=1.5017  reg=0.5712  clf=0.9305
+2026-04-30 01:04:40,703 - INFO -   [3:300] loss=1.2968  reg=0.4808  clf=0.8159
+2026-04-30 01:12:00,093 - INFO -   [3:400] loss=1.4073  reg=0.4905  clf=0.9169
+2026-04-30 01:18:46,815 - INFO -   [3:500] loss=1.3459  reg=0.4697  clf=0.8762
+2026-04-30 01:25:57,052 - INFO -   [3:600] loss=1.4393  reg=0.4223  clf=1.0170
+2026-04-30 01:33:23,748 - INFO -   [3:700] loss=1.3486  reg=0.4600  clf=0.8886
+2026-04-30 01:35:57,235 - INFO - Epoch   3/20  train=1.3448 (reg=0.4757 clf=0.8691)  lr=0.009045
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 01:37:42,506 - INFO -            val=1.0332  fg_acc=81.95%
+2026-04-30 01:37:42,542 - INFO -   ✓ Best saved → models/pruning\finetuned_best.pth
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 01:45:34,866 - INFO -   [4:100] loss=1.3823  reg=0.4788  clf=0.9035
+2026-04-30 01:53:06,560 - INFO -   [4:200] loss=1.3009  reg=0.5048  clf=0.7961
+2026-04-30 02:00:22,210 - INFO -   [4:300] loss=1.1930  reg=0.4401  clf=0.7528
+2026-04-30 02:07:02,603 - INFO -   [4:400] loss=1.2367  reg=0.4341  clf=0.8026
+2026-04-30 02:14:25,814 - INFO -   [4:500] loss=1.4386  reg=0.5422  clf=0.8964
+2026-04-30 02:21:23,333 - INFO -   [4:600] loss=1.1597  reg=0.3053  clf=0.8544
+2026-04-30 02:28:24,158 - INFO -   [4:700] loss=1.1020  reg=0.3554  clf=0.7466
+2026-04-30 02:31:11,113 - INFO - Epoch   4/20  train=1.3222 (reg=0.4657 clf=0.8565)  lr=0.008536
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 02:32:55,199 - INFO -            val=0.9521  fg_acc=84.93%
+2026-04-30 02:32:55,245 - INFO -   ✓ Best saved → models/pruning\finetuned_best.pth
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 02:41:03,931 - INFO -   [5:100] loss=1.3527  reg=0.4540  clf=0.8987
+2026-04-30 02:48:20,834 - INFO -   [5:200] loss=1.4401  reg=0.5495  clf=0.8906
+2026-04-30 02:55:22,182 - INFO -   [5:300] loss=1.6136  reg=0.5488  clf=1.0648
+2026-04-30 03:02:19,816 - INFO -   [5:400] loss=1.3239  reg=0.5029  clf=0.8209
+2026-04-30 03:09:35,351 - INFO -   [5:500] loss=1.2671  reg=0.3971  clf=0.8701
+2026-04-30 03:16:52,806 - INFO -   [5:600] loss=1.0974  reg=0.4010  clf=0.6964
+2026-04-30 03:23:47,667 - INFO -   [5:700] loss=1.2710  reg=0.4578  clf=0.8131
+2026-04-30 03:26:33,147 - INFO - Epoch   5/20  train=1.2861 (reg=0.4516 clf=0.8346)  lr=0.007939
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 03:28:16,971 - INFO -            val=0.9768  fg_acc=86.26%
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 03:36:06,987 - INFO -   [6:100] loss=1.4153  reg=0.4870  clf=0.9283
+2026-04-30 03:43:33,224 - INFO -   [6:200] loss=1.2183  reg=0.4485  clf=0.7698
+2026-04-30 03:50:26,266 - INFO -   [6:300] loss=1.2359  reg=0.5149  clf=0.7210
+2026-04-30 03:57:34,541 - INFO -   [6:400] loss=1.4687  reg=0.5289  clf=0.9398
+2026-04-30 04:04:46,562 - INFO -   [6:500] loss=1.5590  reg=0.5587  clf=1.0002
+2026-04-30 04:11:53,430 - INFO -   [6:600] loss=1.1682  reg=0.3817  clf=0.7866
+2026-04-30 04:18:52,758 - INFO -   [6:700] loss=1.2519  reg=0.3837  clf=0.8682
+2026-04-30 04:21:48,067 - INFO - Epoch   6/20  train=1.2666 (reg=0.4433 clf=0.8233)  lr=0.007270
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 04:23:33,283 - INFO -            val=1.0214  fg_acc=85.91%
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 04:31:38,188 - INFO -   [7:100] loss=1.0649  reg=0.4046  clf=0.6603
+2026-04-30 04:38:59,107 - INFO -   [7:200] loss=1.3530  reg=0.5028  clf=0.8502
+2026-04-30 04:46:11,582 - INFO -   [7:300] loss=1.3850  reg=0.4465  clf=0.9385
+2026-04-30 04:53:01,129 - INFO -   [7:400] loss=1.2390  reg=0.4156  clf=0.8234
+2026-04-30 05:00:08,152 - INFO -   [7:500] loss=1.3145  reg=0.4489  clf=0.8655
+2026-04-30 05:07:13,188 - INFO -   [7:600] loss=1.1411  reg=0.3925  clf=0.7486
+2026-04-30 05:14:12,732 - INFO -   [7:700] loss=1.2126  reg=0.4428  clf=0.7698
+2026-04-30 05:17:04,272 - INFO - Epoch   7/20  train=1.2345 (reg=0.4318 clf=0.8026)  lr=0.006545
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 05:18:49,296 - INFO -            val=0.9339  fg_acc=84.92%
+2026-04-30 05:18:49,351 - INFO -   ✓ Best saved → models/pruning\finetuned_best.pth
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 05:26:52,871 - INFO -   [8:100] loss=1.2060  reg=0.3981  clf=0.8079
+2026-04-30 05:34:12,290 - INFO -   [8:200] loss=1.5872  reg=0.5251  clf=1.0621
+2026-04-30 05:41:03,596 - INFO -   [8:300] loss=1.3929  reg=0.5394  clf=0.8535
+2026-04-30 05:48:15,505 - INFO -   [8:400] loss=1.1298  reg=0.3978  clf=0.7320
+2026-04-30 05:55:28,742 - INFO -   [8:500] loss=0.9751  reg=0.3278  clf=0.6473
+2026-04-30 06:02:49,870 - INFO -   [8:600] loss=1.1399  reg=0.3523  clf=0.7876
+2026-04-30 06:09:39,430 - INFO -   [8:700] loss=1.0607  reg=0.3418  clf=0.7189
+2026-04-30 06:12:29,515 - INFO - Epoch   8/20  train=1.2186 (reg=0.4264 clf=0.7923)  lr=0.005782
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 06:14:13,382 - INFO -            val=0.9277  fg_acc=83.92%
+2026-04-30 06:14:13,431 - INFO -   ✓ Best saved → models/pruning\finetuned_best.pth
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 06:22:09,017 - INFO -   [9:100] loss=0.9607  reg=0.3479  clf=0.6127
+2026-04-30 06:29:13,490 - INFO -   [9:200] loss=0.9678  reg=0.3176  clf=0.6502
+2026-04-30 06:36:19,673 - INFO -   [9:300] loss=1.1365  reg=0.3880  clf=0.7485
+2026-04-30 06:43:17,282 - INFO -   [9:400] loss=1.4779  reg=0.5353  clf=0.9426
+2026-04-30 06:50:27,708 - INFO -   [9:500] loss=1.0885  reg=0.3536  clf=0.7348
+2026-04-30 06:57:27,003 - INFO -   [9:600] loss=1.1640  reg=0.4211  clf=0.7429
+2026-04-30 07:04:46,121 - INFO -   [9:700] loss=1.3860  reg=0.4932  clf=0.8928
+2026-04-30 07:07:28,334 - INFO - Epoch   9/20  train=1.1866 (reg=0.4105 clf=0.7761)  lr=0.005000
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 07:09:14,223 - INFO -            val=0.9373  fg_acc=84.19%
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 07:17:09,668 - INFO -   [10:100] loss=1.2367  reg=0.4015  clf=0.8353
+2026-04-30 07:24:16,826 - INFO -   [10:200] loss=1.0330  reg=0.3503  clf=0.6826
+2026-04-30 07:31:19,476 - INFO -   [10:300] loss=1.1472  reg=0.3882  clf=0.7590
+2026-04-30 07:38:29,605 - INFO -   [10:400] loss=0.9642  reg=0.3056  clf=0.6586
+2026-04-30 07:45:35,843 - INFO -   [10:500] loss=1.0718  reg=0.4093  clf=0.6625
+2026-04-30 07:52:42,457 - INFO -   [10:600] loss=0.9731  reg=0.3536  clf=0.6195
+2026-04-30 07:59:59,523 - INFO -   [10:700] loss=1.1149  reg=0.4042  clf=0.7106
+2026-04-30 08:02:51,079 - INFO - Epoch  10/20  train=1.1663 (reg=0.4028 clf=0.7635)  lr=0.004218
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 08:04:45,516 - INFO -            val=0.8950  fg_acc=86.07%
+2026-04-30 08:04:45,574 - INFO -   ✓ Best saved → models/pruning\finetuned_best.pth
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 08:12:56,242 - INFO -   [11:100] loss=1.2400  reg=0.4174  clf=0.8225
+2026-04-30 08:20:25,367 - INFO -   [11:200] loss=1.3862  reg=0.5225  clf=0.8637
+2026-04-30 08:27:22,391 - INFO -   [11:300] loss=1.0666  reg=0.3568  clf=0.7098
+2026-04-30 08:34:25,899 - INFO -   [11:400] loss=1.3061  reg=0.4320  clf=0.8741
+2026-04-30 08:41:50,830 - INFO -   [11:500] loss=1.0241  reg=0.3082  clf=0.7159
+2026-04-30 08:48:51,854 - INFO -   [11:600] loss=1.2268  reg=0.4576  clf=0.7692
+2026-04-30 08:56:19,770 - INFO -   [11:700] loss=1.0602  reg=0.3334  clf=0.7268
+2026-04-30 08:59:02,353 - INFO - Epoch  11/20  train=1.1385 (reg=0.3930 clf=0.7455)  lr=0.003455
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 09:00:47,149 - INFO -            val=0.8628  fg_acc=86.43%
+2026-04-30 09:00:47,185 - INFO -   ✓ Best saved → models/pruning\finetuned_best.pth
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 09:08:47,749 - INFO -   [12:100] loss=1.1856  reg=0.4050  clf=0.7805
+2026-04-30 09:16:16,488 - INFO -   [12:200] loss=1.2264  reg=0.4338  clf=0.7926
+2026-04-30 09:23:44,326 - INFO -   [12:300] loss=1.3718  reg=0.4318  clf=0.9400
+2026-04-30 09:30:44,186 - INFO -   [12:400] loss=0.9058  reg=0.3276  clf=0.5782
+2026-04-30 09:38:00,418 - INFO -   [12:500] loss=1.1830  reg=0.4234  clf=0.7596
+2026-04-30 09:45:05,421 - INFO -   [12:600] loss=1.2444  reg=0.5007  clf=0.7437
+2026-04-30 09:52:16,757 - INFO -   [12:700] loss=1.4234  reg=0.4656  clf=0.9578
+2026-04-30 09:54:59,834 - INFO - Epoch  12/20  train=1.1235 (reg=0.3863 clf=0.7372)  lr=0.002730
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 09:56:52,788 - INFO -            val=0.9025  fg_acc=84.16%
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 10:05:16,877 - INFO -   [13:100] loss=1.2522  reg=0.4130  clf=0.8392
+2026-04-30 10:12:30,691 - INFO -   [13:200] loss=1.2336  reg=0.4484  clf=0.7851
+2026-04-30 10:19:55,058 - INFO -   [13:300] loss=1.1271  reg=0.3764  clf=0.7507
+2026-04-30 10:26:46,420 - INFO -   [13:400] loss=1.0043  reg=0.2986  clf=0.7056
+2026-04-30 10:33:56,123 - INFO -   [13:500] loss=1.3136  reg=0.4951  clf=0.8185
+2026-04-30 10:41:11,094 - INFO -   [13:600] loss=1.3836  reg=0.5052  clf=0.8785
+2026-04-30 10:48:01,317 - INFO -   [13:700] loss=0.9851  reg=0.2797  clf=0.7054
+2026-04-30 10:50:49,478 - INFO - Epoch  13/20  train=1.0986 (reg=0.3769 clf=0.7217)  lr=0.002061
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 10:52:37,443 - INFO -            val=0.8047  fg_acc=86.84%
+2026-04-30 10:52:37,498 - INFO -   ✓ Best saved → models/pruning\finetuned_best.pth
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 11:00:37,396 - INFO -   [14:100] loss=1.0624  reg=0.3493  clf=0.7131
+2026-04-30 11:07:56,423 - INFO -   [14:200] loss=0.9806  reg=0.3621  clf=0.6185
+2026-04-30 11:15:05,243 - INFO -   [14:300] loss=1.0773  reg=0.3456  clf=0.7317
+2026-04-30 11:21:53,965 - INFO -   [14:400] loss=1.0528  reg=0.3278  clf=0.7251
+2026-04-30 11:29:19,854 - INFO -   [14:500] loss=1.0383  reg=0.3870  clf=0.6513
+2026-04-30 11:36:37,050 - INFO -   [14:600] loss=1.1209  reg=0.3695  clf=0.7514
+2026-04-30 11:43:22,345 - INFO -   [14:700] loss=0.8465  reg=0.2353  clf=0.6112
+2026-04-30 11:46:05,467 - INFO - Epoch  14/20  train=1.0811 (reg=0.3693 clf=0.7118)  lr=0.001464
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 11:47:49,813 - INFO -            val=0.8033  fg_acc=87.84%
+2026-04-30 11:47:49,859 - INFO -   ✓ Best saved → models/pruning\finetuned_best.pth
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 11:55:41,612 - INFO -   [15:100] loss=1.1316  reg=0.3843  clf=0.7473
+2026-04-30 12:02:50,651 - INFO -   [15:200] loss=1.2743  reg=0.4245  clf=0.8498
+2026-04-30 12:10:00,491 - INFO -   [15:300] loss=0.8933  reg=0.3327  clf=0.5606
+2026-04-30 12:16:55,694 - INFO -   [15:400] loss=1.0861  reg=0.3996  clf=0.6865
+2026-04-30 12:24:00,741 - INFO -   [15:500] loss=0.8656  reg=0.2729  clf=0.5927
+2026-04-30 12:31:24,764 - INFO -   [15:600] loss=1.2782  reg=0.4805  clf=0.7978
+2026-04-30 12:38:10,503 - INFO -   [15:700] loss=1.2227  reg=0.4397  clf=0.7830
+2026-04-30 12:41:04,635 - INFO - Epoch  15/20  train=1.0601 (reg=0.3614 clf=0.6987)  lr=0.000955
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 12:42:48,827 - INFO -            val=0.7916  fg_acc=87.71%
+2026-04-30 12:42:48,859 - INFO -   ✓ Best saved → models/pruning\finetuned_best.pth
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 12:50:41,795 - INFO -   [16:100] loss=1.0402  reg=0.3747  clf=0.6655
+2026-04-30 12:58:07,183 - INFO -   [16:200] loss=1.0991  reg=0.4289  clf=0.6702
+2026-04-30 13:05:05,135 - INFO -   [16:300] loss=1.2762  reg=0.4643  clf=0.8119
+2026-04-30 13:12:10,950 - INFO -   [16:400] loss=1.0870  reg=0.3548  clf=0.7322
+2026-04-30 13:19:27,118 - INFO -   [16:500] loss=1.1691  reg=0.3818  clf=0.7873
+2026-04-30 13:26:29,429 - INFO -   [16:600] loss=0.9731  reg=0.3704  clf=0.6028
+2026-04-30 13:33:44,247 - INFO -   [16:700] loss=1.0171  reg=0.3500  clf=0.6672
+2026-04-30 13:36:26,153 - INFO - Epoch  16/20  train=1.0523 (reg=0.3602 clf=0.6920)  lr=0.000545
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 13:38:10,304 - INFO -            val=0.7859  fg_acc=87.01%
+2026-04-30 13:38:10,352 - INFO -   ✓ Best saved → models/pruning\finetuned_best.pth
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 13:46:13,580 - INFO -   [17:100] loss=1.1114  reg=0.3794  clf=0.7320
+2026-04-30 13:53:16,570 - INFO -   [17:200] loss=1.0279  reg=0.3694  clf=0.6585
+2026-04-30 14:00:27,569 - INFO -   [17:300] loss=0.8895  reg=0.2868  clf=0.6027
+2026-04-30 14:07:32,491 - INFO -   [17:400] loss=0.9625  reg=0.2959  clf=0.6666
+2026-04-30 14:14:31,924 - INFO -   [17:500] loss=0.9419  reg=0.3251  clf=0.6168
+2026-04-30 14:21:51,605 - INFO -   [17:600] loss=0.8683  reg=0.2839  clf=0.5844
+2026-04-30 14:28:57,144 - INFO -   [17:700] loss=1.1267  reg=0.3502  clf=0.7765
+2026-04-30 14:31:42,092 - INFO - Epoch  17/20  train=1.0294 (reg=0.3508 clf=0.6785)  lr=0.000245
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 14:33:29,243 - INFO -            val=0.7761  fg_acc=87.32%
+2026-04-30 14:33:29,287 - INFO -   ✓ Best saved → models/pruning\finetuned_best.pth
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 14:41:27,713 - INFO -   [18:100] loss=0.7764  reg=0.2346  clf=0.5418
+2026-04-30 14:48:31,814 - INFO -   [18:200] loss=0.9641  reg=0.3050  clf=0.6591
+2026-04-30 14:55:55,079 - INFO -   [18:300] loss=0.9619  reg=0.3215  clf=0.6404
+2026-04-30 15:03:02,268 - INFO -   [18:400] loss=0.8623  reg=0.2991  clf=0.5631
+2026-04-30 15:10:12,710 - INFO -   [18:500] loss=0.9939  reg=0.3245  clf=0.6693
+2026-04-30 15:17:04,255 - INFO -   [18:600] loss=1.1102  reg=0.3503  clf=0.7599
+2026-04-30 15:24:24,213 - INFO -   [18:700] loss=0.9985  reg=0.3266  clf=0.6719
+2026-04-30 15:27:10,795 - INFO - Epoch  18/20  train=1.0289 (reg=0.3487 clf=0.6803)  lr=0.000062
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 15:28:54,846 - INFO -            val=0.7654  fg_acc=88.11%
+2026-04-30 15:28:54,895 - INFO -   ✓ Best saved → models/pruning\finetuned_best.pth
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 15:36:50,287 - INFO -   [19:100] loss=0.8711  reg=0.3020  clf=0.5690
+2026-04-30 15:44:04,121 - INFO -   [19:200] loss=1.1294  reg=0.3592  clf=0.7701
+2026-04-30 15:50:59,326 - INFO -   [19:300] loss=0.9615  reg=0.3367  clf=0.6247
+2026-04-30 15:58:06,774 - INFO -   [19:400] loss=0.8592  reg=0.3028  clf=0.5564
+2026-04-30 16:05:14,848 - INFO -   [19:500] loss=1.0121  reg=0.3489  clf=0.6632
+2026-04-30 16:12:13,698 - INFO -   [19:600] loss=1.0255  reg=0.3640  clf=0.6616
+2026-04-30 16:19:33,279 - INFO -   [19:700] loss=0.8492  reg=0.2933  clf=0.5559
+2026-04-30 16:22:12,314 - INFO - Epoch  19/20  train=1.0263 (reg=0.3483 clf=0.6780)  lr=0.000000
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+priors nums:4420
+2026-04-30 16:23:56,200 - INFO -            val=0.7649  fg_acc=88.00%
+2026-04-30 16:23:56,235 - INFO -   ✓ Best saved → models/pruning\finetuned_best.pth
+2026-04-30 16:23:56,258 - INFO -
+Final model → models/pruning\finetuned_final.pth
+2026-04-30 16:23:56,259 - INFO - Best val loss: 0.7649
+2026-04-30 16:23:56,259 - INFO -
+Done. Compare finetuned_best.pth against your original model.

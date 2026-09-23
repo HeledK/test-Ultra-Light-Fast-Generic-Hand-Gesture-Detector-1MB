@@ -1,0 +1,38 @@
+priors nums:4420
+2025-12-03 12:07:12,386 - root - INFO - Use Cuda.
+2025-12-03 12:07:12,386 - root - INFO - Namespace(dataset_type='voc', datasets=['./data/wider_face_add_lm_10_10'], validation_dataset='./data/wider_face_add_lm_10_10', balance_data=False, net='slim', freeze_base_net=False, freeze_net=False, lr=0.01, momentum=0.9, weight_decay=0.0005, gamma=0.1, base_net_lr=None, extra_layers_lr=None, base_net=None, pretrained_ssd=None, resume=None, scheduler='multi-step', milestones='95,150', t_max=120, batch_size=4, num_epochs=150, num_workers=0, validation_epochs=5, debug_steps=100, use_cuda=True, checkpoint_folder='./models/train-version-slim', log_dir='./models/train-version-slim/logs', cuda_index='0', power=2, overlap_threshold=0.35, optimizer_type='SGD', input_size=320, quan_size=128)
+2025-12-03 12:07:12,402 - root - INFO - Prepare training datasets.
+2025-12-03 12:07:12,403 - root - INFO - No labels file, using default VOC classes.
+2025-12-03 12:07:12,403 - root - INFO - Stored labels into file ./models/train-version-slim\voc-model-labels.txt.
+2025-12-03 12:07:12,403 - root - INFO - Train dataset size: 160
+2025-12-03 12:07:12,404 - root - INFO - Prepare Validation datasets.
+2025-12-03 12:07:12,404 - root - INFO - No labels file, using default VOC classes.
+2025-12-03 12:07:12,404 - root - INFO - validation dataset size: 40
+2025-12-03 12:07:12,404 - root - INFO - Build network.
+2025-12-03 12:07:12,631 - root - INFO - use gpu :[0]
+2025-12-03 12:07:12,631 - root - INFO - Took 0.00 seconds to load the model.
+2025-12-03 12:07:12,633 - root - INFO - Learning rate: 0.01, Base net learning rate: 0.01, Extra Layers learning rate: 0.01.
+2025-12-03 12:07:12,633 - root - INFO - Uses MultiStepLR scheduler.
+2025-12-03 12:07:12,633 - root - INFO - Start training from epoch 0.
+Traceback (most recent call last):
+  File "C:\Users\Heled\Ultra-Light-Fast-Generic-Face-Detector-1MB\train.py", line 412, in <module>
+    train(train_loader, net, criterion, optimizer,
+  File "C:\Users\Heled\Ultra-Light-Fast-Generic-Face-Detector-1MB\train.py", line 148, in train
+    for i, data in enumerate(loader):
+  File "C:\Users\Heled\AppData\Roaming\Python\Python39\site-packages\torch\utils\data\dataloader.py", line 701, in __next__
+    data = self._next_data()
+  File "C:\Users\Heled\AppData\Roaming\Python\Python39\site-packages\torch\utils\data\dataloader.py", line 757, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "C:\Users\Heled\AppData\Roaming\Python\Python39\site-packages\torch\utils\data\_utils\fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "C:\Users\Heled\AppData\Roaming\Python\Python39\site-packages\torch\utils\data\_utils\fetch.py", line 52, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "C:\Users\Heled\AppData\Roaming\Python\Python39\site-packages\torch\utils\data\dataset.py", line 350, in __getitem__
+    return self.datasets[dataset_idx][sample_idx]
+  File "C:\Users\Heled\Ultra-Light-Fast-Generic-Face-Detector-1MB\vision\datasets\voc_dataset.py", line 63, in __getitem__
+    boxes, labels = self.target_transform(boxes, labels)
+  File "C:\Users\Heled\Ultra-Light-Fast-Generic-Face-Detector-1MB\vision\ssd\ssd.py", line 157, in __call__
+    boxes, labels = box_utils.assign_priors(gt_boxes, gt_labels,
+  File "C:\Users\Heled\Ultra-Light-Fast-Generic-Face-Detector-1MB\vision\utils\box_utils.py", line 116, in assign_priors
+    best_target_per_prior, best_target_per_prior_index = ious.max(1)
+IndexError: max(): Expected reduction dim 1 to have non-zero size.

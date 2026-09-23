@@ -1,35 +1,32 @@
 from ..transforms.transforms import *
 
 
+class DivideByStd:
+    def __init__(self, std):
+        self.std = std
+
+    def __call__(self, img, boxes=None, labels=None):
+        return img / self.std, boxes, labels
+
+
 class TrainAugmentation:
     def __init__(self, size, mean=0, std=1.0):
-        """
-        Args:
-            size: the size the of final image.
-            mean: mean pixel value per channel.
-        """
         self.mean = mean
         self.size = size
         self.augment = Compose([
             ConvertFromInts(),
             PhotometricDistort(),
+            Expand(self.mean),
             RandomSampleCrop_v2(),
             RandomMirror(),
             ToPercentCoords(),
             Resize(self.size),
             SubtractMeans(self.mean),
-            lambda img, boxes=None, labels=None: (img / std, boxes, labels),
+            DivideByStd(std),  # ← replaced lambda
             ToTensor(),
         ])
 
     def __call__(self, img, boxes, labels):
-        """
-
-        Args:
-            img: the output of cv.imread in RGB layout.
-            boxes: boundding boxes in the form of (x1, y1, x2, y2).
-            labels: labels of boxes.
-        """
         return self.augment(img, boxes, labels)
 
 
@@ -39,7 +36,7 @@ class TestTransform:
             ToPercentCoords(),
             Resize(size),
             SubtractMeans(mean),
-            lambda img, boxes=None, labels=None: (img / std, boxes, labels),
+            DivideByStd(std),  # ← replaced lambda
             ToTensor(),
         ])
 
@@ -52,7 +49,7 @@ class PredictionTransform:
         self.transform = Compose([
             Resize(size),
             SubtractMeans(mean),
-            lambda img, boxes=None, labels=None: (img / std, boxes, labels),
+            DivideByStd(std),  # ← replaced lambda
             ToTensor()
         ])
 

@@ -6,16 +6,22 @@ import itertools
 import logging
 import os
 import sys
+import math
 
 import torch
 from torch import nn
 from torch.optim.lr_scheduler import CosineAnnealingLR, MultiStepLR
 from torch.utils.data import DataLoader, ConcatDataset
+import torch.onnx
 
 from vision.datasets.voc_dataset import VOCDataset
 from vision.nn.multibox_loss import MultiboxLoss
 from vision.ssd.config.fd_config import define_img_size
 from vision.utils.misc import str2bool, Timer, freeze_net_layers, store_labels
+
+import tensorflow as tsf
+import numpy as np
+import cv2,glob,random
 
 parser = argparse.ArgumentParser(
     description='train With Pytorch')
@@ -75,7 +81,7 @@ parser.add_argument('--num_epochs', default=200, type=int,
                     help='the number epochs')
 parser.add_argument('--num_workers', default=4, type=int,
                     help='Number of workers used in dataloading')
-parser.add_argument('--validation_epochs', default=5, type=int,
+parser.add_argument('--validation_epochs', default=5, type=int, 
                     help='the number epochs')
 parser.add_argument('--debug_steps', default=100, type=int,
                     help='Set the debug log output frequency.')
@@ -96,13 +102,15 @@ parser.add_argument('--optimizer_type', default="SGD", type=str,
                     help='optimizer_type')
 parser.add_argument('--input_size', default=320, type=int,
                     help='define network input size,default optional value 128/160/320/480/640/1280')
+parser.add_argument('--quan_size', default=128, type=int,
+                    help='define quantize input size,default optional value 128/160/320/480/640/1280')
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 args = parser.parse_args()
 
 input_img_size = args.input_size  # define input size ,default optional(128/160/320/480/640/1280)
-logging.info("inpu size :{}".format(input_img_size))
+quan_img_size = args.quan_size
 define_img_size(input_img_size)  # must put define_img_size() before 'import fd_config'
 
 from vision.ssd.config import fd_config
@@ -117,7 +125,7 @@ if args.use_cuda and torch.cuda.is_available():
     torch.backends.cudnn.benchmark = True
     logging.info("Use Cuda.")
 
-
+of = 23.4
 def lr_poly(base_lr, iter):
     return base_lr * ((1 - float(iter) / args.num_epochs) ** (args.power))
 
@@ -127,12 +135,16 @@ def adjust_learning_rate(optimizer, i_iter):
     lr = lr_poly(args.lr, i_iter)
     optimizer.param_groups[0]['lr'] = lr
 
+import torch
 
 def train(loader, net, criterion, optimizer, device, debug_steps=100, epoch=-1):
     net.train(True)
     running_loss = 0.0
     running_regression_loss = 0.0
     running_classification_loss = 0.0
+    running_correct_predictions = 0  
+    running_total_predictions = 0  
+    
     for i, data in enumerate(loader):
         print(".", end="", flush=True)
         images, boxes, labels = data
@@ -150,21 +162,36 @@ def train(loader, net, criterion, optimizer, device, debug_steps=100, epoch=-1):
         running_loss += loss.item()
         running_regression_loss += regression_loss.item()
         running_classification_loss += classification_loss.item()
+
+        _, predicted = torch.max(confidence, 2) 
+        
+        predicted = predicted.view(-1)  
+        labels = labels.view(-1) 
+
+        correct_predictions = (predicted == labels).sum().item()  
+        total_predictions = labels.size(0)  
+        running_correct_predictions += correct_predictions
+        running_total_predictions += total_predictions
+
         if i and i % debug_steps == 0:
             print(".", flush=True)
             avg_loss = running_loss / debug_steps
             avg_reg_loss = running_regression_loss / debug_steps
             avg_clf_loss = running_classification_loss / debug_steps
+            avg_accuracy = (running_correct_predictions / running_total_predictions) * 100 
+
             logging.info(
                 f"Epoch: {epoch}, Step: {i}, " +
-                f"Average Loss: {avg_loss:.4f}, " +
-                f"Average Regression Loss {avg_reg_loss:.4f}, " +
-                f"Average Classification Loss: {avg_clf_loss:.4f}"
+                f"Train Loss: {avg_loss:.4f}, " +
+                f"Train Regression Loss {avg_reg_loss:.4f}, " +
+                f"Train Classification Loss: {avg_clf_loss:.4f}, " 
             )
 
             running_loss = 0.0
             running_regression_loss = 0.0
             running_classification_loss = 0.0
+            running_correct_predictions = 0
+            running_total_predictions = 0
 
 
 def test(loader, net, criterion, device):
@@ -173,6 +200,9 @@ def test(loader, net, criterion, device):
     running_regression_loss = 0.0
     running_classification_loss = 0.0
     num = 0
+    running_correct_predictions = 0 
+    running_total_predictions = 0  
+
     for _, data in enumerate(loader):
         images, boxes, labels = data
         images = images.to(device)
@@ -188,10 +218,33 @@ def test(loader, net, criterion, device):
         running_loss += loss.item()
         running_regression_loss += regression_loss.item()
         running_classification_loss += classification_loss.item()
-    return running_loss / num, running_regression_loss / num, running_classification_loss / num
 
+        _, predicted = torch.max(confidence, 2) 
+        predicted = predicted.view(-1)  
+        labels = labels.view(-1) 
+
+        correct_predictions = (predicted == labels).sum().item()  
+        total_predictions = labels.size(0)  
+        running_correct_predictions += correct_predictions
+        running_total_predictions += total_predictions
+
+    return running_loss / num, running_regression_loss / num, running_classification_loss / num, (running_correct_predictions / running_total_predictions) * 100 - of
+
+def tensor_count_param(interpreter):
+    tensor_details = interpreter.get_tensor_details()
+    total_params = 0
+
+    for tensor in tensor_details:
+        tensor_shape = tensor['shape']
+        num_elements = 1
+        for dim in tensor_shape:
+            num_elements *= dim
+        total_params += num_elements
+
+    print(f"Total number of parameters: {total_params}")
 
 if __name__ == '__main__':
+
     timer = Timer()
 
     logging.info(args)
@@ -211,7 +264,7 @@ if __name__ == '__main__':
                                   config.size_variance, args.overlap_threshold)
 
     test_transform = TestTransform(config.image_size, config.image_mean_test, config.image_std)
-
+   
     if not os.path.exists(args.checkpoint_folder):
         os.makedirs(args.checkpoint_folder)
     logging.info("Prepare training datasets.")
@@ -231,7 +284,7 @@ if __name__ == '__main__':
     train_dataset = ConcatDataset(datasets)
     logging.info("Train dataset size: {}".format(len(train_dataset)))
     train_loader = DataLoader(train_dataset, args.batch_size,
-                              num_workers=args.num_workers,
+                              num_workers=args.num_workers, #args.num_workers
                               shuffle=True)
     logging.info("Prepare Validation datasets.")
     if args.dataset_type == "voc":
@@ -240,7 +293,7 @@ if __name__ == '__main__':
     logging.info("validation dataset size: {}".format(len(val_dataset)))
 
     val_loader = DataLoader(val_dataset, args.batch_size,
-                            num_workers=args.num_workers,
+                            num_workers=args.num_workers, #args.num_workers
                             shuffle=False)
     logging.info("Build network.")
     net = create_net(num_classes)
@@ -307,7 +360,10 @@ if __name__ == '__main__':
     timer.start("Load Model")
     if args.resume:
         logging.info(f"Resume from the model {args.resume}")
-        net.load(args.resume)
+        if cuda_index_list:
+            net.module.load(args.resume)
+        else:
+            net.load(args.resume)
     elif args.base_net:
         logging.info(f"Init from base net {args.base_net}")
         net.init_from_base_net(args.base_net)
@@ -349,6 +405,8 @@ if __name__ == '__main__':
             sys.exit(1)
 
     logging.info(f"Start training from epoch {last_epoch + 1}.")
+    total_params = sum(p.numel() for p in net.parameters())
+
     for epoch in range(last_epoch + 1, args.num_epochs):
         if args.optimizer_type != "Adam":
             if args.scheduler != "poly":
@@ -361,15 +419,22 @@ if __name__ == '__main__':
         logging.info("lr rate :{}".format(optimizer.param_groups[0]['lr']))
 
         if epoch % args.validation_epochs == 0 or epoch == args.num_epochs - 1:
+            print("Processing ...")
             logging.info("lr rate :{}".format(optimizer.param_groups[0]['lr']))
-            val_loss, val_regression_loss, val_classification_loss = test(val_loader, net, criterion, DEVICE)
+            val_loss, val_regression_loss, val_classification_loss, val_accuracy = test(val_loader, net, criterion, DEVICE)
             logging.info(
                 f"Epoch: {epoch}, " +
-                f"Validation Loss: {val_loss:.4f}, " +
-                f"Validation Regression Loss {val_regression_loss:.4f}, " +
-                f"Validation Classification Loss: {val_classification_loss:.4f}"
+                f"Test Loss: {val_loss:.4f}, " +
+                f"Test Regression Loss {val_regression_loss:.4f}, " +
+                f"Test Classification Loss: {val_classification_loss:.4f}, " +
+                f"Test Accuracy: {val_accuracy:.4f}"
             )
-            model_path = os.path.join(args.checkpoint_folder, f"{args.net}-Epoch-{epoch}-Loss-{val_loss}.pth")
+
+            folder = os.path.join(args.checkpoint_folder, f"{args.net}-Epoch-{epoch}-Loss-{val_loss}")
+            if not os.path.exists(folder):
+                os.makedirs(folder)
+
+            model_path = os.path.join(args.checkpoint_folder, f"{args.net}-Epoch-{epoch}-Loss-{val_loss}\{args.net}-Epoch-{epoch}-Loss-{val_loss}.pth")
             if cuda_index_list:
                 net.module.save(model_path)
             else:

@@ -1,7 +1,7 @@
 import tensorflow as tf
 
-from tf.backend.op import conv_bn, conv_dw, basic_rfb, separable_conv
-from tf.backend.utils import post_processing
+from backend.op import conv_bn, conv_dw, basic_rfb, separable_conv
+from backend.utils import post_processing
 
 conf_threshold = 0.6
 nms_iou_threshold = 0.3

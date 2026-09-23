@@ -1,0 +1,119 @@
+baseline
+══════════════════════════════════════════════════════════
+  RESULTS
+══════════════════════════════════════════════════════════
+
+── Per-class Detection Accuracy  (conf ≥ 0.5) ────────
+    palm:  4967 /  5000  =  99.34%
+     two:  4941 /  5000  =  98.82%
+   TOTAL:  9908 / 10000  =  99.08%
+
+── mAP @ IoU 0.5  (all-point interpolation) ───────────────
+    palm: 0.8300
+     two: 0.8258
+     mAP: 0.8279
+
+── Confusion Matrix ──────────────────────────────────────
+               pred:palm    pred:two   no detect
+     gt:palm        4967          16          17
+      gt:two          11        4941          48
+
+══════════════════════════════════════════════════════════
+
+8% prune 
+══════════════════════════════════════════════════════════
+  RESULTS — PRUNED MODEL
+══════════════════════════════════════════════════════════
+  Model:      models/pruning/finetuned_best.pth
+  Parameters: 246,614
+
+── Per-class Detection Accuracy  (conf ≥ 0.5) ────────
+    palm:  4967 /  5000  =  99.34%
+     two:  4935 /  5000  =  98.70%
+   TOTAL:  9902 / 10000  =  99.02%
+
+── mAP @ IoU 0.5  (all-point interpolation) ───────────────
+    palm: 0.8298
+     two: 0.8254
+     mAP: 0.8276
+
+── Confusion Matrix ──────────────────────────────────────
+               pred:palm    pred:two   no detect
+     gt:palm        4967          12          21
+      gt:two           7        4935          58
+
+══════════════════════════════════════════════════════════
+
+25% prune
+
+══════════════════════════════════════════════════════════
+  RESULTS — PRUNED MODEL
+══════════════════════════════════════════════════════════
+  Model:      models/pruning/finetuned_best.pth
+  Parameters: 201,070
+
+── Per-class Detection Accuracy  (conf ≥ 0.5) ────────
+    palm:  4959 /  5000  =  99.18%
+     two:  4932 /  5000  =  98.64%
+   TOTAL:  9891 / 10000  =  98.91%
+
+── mAP @ IoU 0.5  (all-point interpolation) ───────────────
+    palm: 0.8298
+     two: 0.8245
+     mAP: 0.8271
+
+── Confusion Matrix ──────────────────────────────────────
+               pred:palm    pred:two   no detect
+     gt:palm        4959          13          28
+      gt:two           6        4932          62
+
+══════════════════════════════════════════════════════════
+
+35% prune 
+══════════════════════════════════════════════════════════
+  RESULTS — PRUNED MODEL
+══════════════════════════════════════════════════════════
+  Model:      models/pruning/finetuned_best.pth
+  Parameters: 175,662
+
+── Per-class Detection Accuracy  (conf ≥ 0.5) ────────
+    palm:  4956 /  5000  =  99.12%
+     two:  4919 /  5000  =  98.38%
+   TOTAL:  9875 / 10000  =  98.75%
+
+── mAP @ IoU 0.5  (all-point interpolation) ───────────────
+    palm: 0.8293
+     two: 0.8231
+     mAP: 0.8262
+
+── Confusion Matrix ──────────────────────────────────────
+               pred:palm    pred:two   no detect
+     gt:palm        4956          18          26
+      gt:two          13        4919          68
+
+══════════════════════════════════════════════════════════
+
+50% prune 
+
+══════════════════════════════════════════════════════════
+  RESULTS — PRUNED MODEL
+══════════════════════════════════════════════════════════
+  Model:      models/pruning/finetuned_best.pth
+  Parameters: 135,462
+
+── Per-class Detection Accuracy  (conf ≥ 0.5) ────────
+    palm:  4961 /  5000  =  99.22%
+     two:  4924 /  5000  =  98.48%
+   TOTAL:  9885 / 10000  =  98.85%
+
+── mAP @ IoU 0.5  (all-point interpolation) ───────────────
+    palm: 0.8293
+     two: 0.8249
+     mAP: 0.8271
+
+── Confusion Matrix ──────────────────────────────────────
+               pred:palm    pred:two   no detect
+     gt:palm        4961          19          20
+      gt:two          19        4924          57
+
+══════════════════════════════════════════════════════════

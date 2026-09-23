@@ -1,7 +1,7 @@
 import tensorflow as tf
 
-from tf.backend.op import conv_bn, conv_dw, separable_conv
-from tf.backend.utils import post_processing
+from backend.op import conv_bn, conv_dw, separable_conv
+from backend.utils import post_processing
 
 conf_threshold = 0.6
 nms_iou_threshold = 0.3
@@ -9,10 +9,10 @@ nms_max_output_size = 200
 top_k = 100
 center_variance = 0.1
 size_variance = 0.2
-
-image_size = [320, 240]  # default input size 320*240
-feature_map_wh_list = [[40, 30], [20, 15], [10, 8], [5, 4]]  # default feature map size
-min_boxes = [[10, 16, 24], [32, 48], [64, 96], [128, 192, 256]]
+#NO NEED TO CHANGE ANYTHING HERE THERE IS A separate slim test file for 320x240
+image_size = [128, 128]  # default input size 128x128
+feature_map_wh_list = [[8, 8], [4, 4], [2, 2]]  # default feature map size
+min_boxes = [[32, 48], [64, 96], [128, 192, 256]]
 
 
 def create_slim_net(input_shape, base_channel, num_classes):
@@ -58,8 +58,8 @@ def create_slim_net(input_shape, base_channel, num_classes):
     cls_3 = tf.keras.layers.Conv2D(3 * num_classes, kernel_size=3, padding='SAME',
                                    name='cls_3_convbias')(header_3)
 
-    result = post_processing([reg_0, reg_1, reg_2, reg_3],
-                             [cls_0, cls_1, cls_2, cls_3],
+    result = post_processing([reg_1, reg_2, reg_3],
+                             [cls_1, cls_2, cls_3],
                              num_classes, image_size, feature_map_wh_list, min_boxes,
                              center_variance, size_variance)
 

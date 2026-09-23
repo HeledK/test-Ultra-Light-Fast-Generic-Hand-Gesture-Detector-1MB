@@ -1,0 +1,9 @@
+# HaGRID 2-class (palm, two) YOLO dataset
+path: C:/Users/Heled/Ultra-Light-Fast-Generic-Face-Detector-1MB/data/hagrid_yolo
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: palm
+  1: two

@@ -1,0 +1,293 @@
+priors nums:4420
+2026-05-28 18:19:41,235 - root - INFO - Use Cuda.
+2026-05-28 18:19:41,235 - root - INFO - Namespace(dataset_type='voc', datasets=['./data/wider_face_add_lm_10_10'], validation_dataset='./data/wider_face_add_lm_10_10', balance_data=False, net='slim', freeze_base_net=False, freeze_net=False, lr=5e-05, momentum=0.9, weight_decay=0.0005, gamma=0.1, base_net_lr=None, extra_layers_lr=None, base_net=None, pretrained_ssd=None, resume='models/train-version-slim/slim-Epoch-25-Loss-3.6675331973014993/slim-Epoch-25-Loss-3.6675331973014993.pth', scheduler='multi-step', milestones='9', t_max=120, batch_size=32, num_epochs=14, num_workers=6, validation_epochs=5, debug_steps=100, use_cuda=True, checkpoint_folder='./models/train-version-slim', log_dir='./models/train-version-slim/logs', cuda_index='0', power=2, overlap_threshold=0.35, optimizer_type='SGD', input_size=320, quan_size=128)
+2026-05-28 18:19:41,236 - root - INFO - Prepare training datasets.
+2026-05-28 18:19:41,238 - root - INFO - No labels file, using default VOC classes.
+2026-05-28 18:19:41,238 - root - INFO - Stored labels into file ./models/train-version-slim\voc-model-labels.txt.
+2026-05-28 18:19:41,239 - root - INFO - Train dataset size: 5000
+2026-05-28 18:19:41,239 - root - INFO - Prepare Validation datasets.
+2026-05-28 18:19:41,241 - root - INFO - No labels file, using default VOC classes.
+2026-05-28 18:19:41,241 - root - INFO - validation dataset size: 3000
+2026-05-28 18:19:41,241 - root - INFO - Build network.
+2026-05-28 18:19:41,465 - root - INFO - use gpu :[0]
+2026-05-28 18:19:41,465 - root - INFO - Resume from the model models/train-version-slim/slim-Epoch-25-Loss-3.6675331973014993/slim-Epoch-25-Loss-3.6675331973014993.pth
+C:\Users\Heled\Ultra-Light-Fast-Generic-Face-Detector-1MB\vision\ssd\ssd.py:138: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.load_state_dict(torch.load(model, map_location=lambda storage, loc: storage))
+2026-05-28 18:19:41,500 - root - INFO - Took 0.03 seconds to load the model.
+2026-05-28 18:19:41,502 - root - INFO - Learning rate: 5e-05, Base net learning rate: 5e-05, Extra Layers learning rate: 5e-05.
+2026-05-28 18:19:41,502 - root - INFO - Uses MultiStepLR scheduler.
+2026-05-28 18:19:41,503 - root - INFO - Start training from epoch 0.
+priors nums:4420
+2026-05-28 18:19:49,714 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:19:58,033 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:20:07,613 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:20:15,719 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:20:23,984 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:20:32,193 - root - INFO - Use Cuda.
+......................................................................................................
+2026-05-28 18:24:12,165 - root - INFO - Epoch: 0, Step: 100, Train Loss: 4.0921, Train Regression Loss 2.0172, Train Classification Loss: 2.0748, 
+........................................................2026-05-28 18:26:16,980 - root - INFO - lr rate :5e-05
+Processing ...
+2026-05-28 18:26:16,982 - root - INFO - lr rate :5e-05
+priors nums:4420
+2026-05-28 18:26:28,814 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:26:36,790 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:26:44,880 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:26:52,947 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:27:01,087 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:27:09,324 - root - INFO - Use Cuda.
+2026-05-28 18:27:55,179 - root - INFO - Epoch: 0, Test Loss: 3.6547, Test Regression Loss 1.7044, Test Classification Loss: 1.9503, Test Accuracy: 76.4401
+2026-05-28 18:27:55,240 - root - INFO - Saved model ./models/train-version-slim\slim-Epoch-0-Loss-3.6547019329476864\slim-Epoch-0-Loss-3.6547019329476864.pth
+priors nums:4420
+2026-05-28 18:28:04,754 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:28:12,911 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:28:20,918 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:28:29,384 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:28:37,569 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:28:45,612 - root - INFO - Use Cuda.
+......................................................................................................
+2026-05-28 18:32:45,349 - root - INFO - Epoch: 1, Step: 100, Train Loss: 4.0815, Train Regression Loss 2.0075, Train Classification Loss: 2.0740, 
+........................................................2026-05-28 18:34:41,021 - root - INFO - lr rate :5e-05
+priors nums:4420
+2026-05-28 18:34:51,011 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:35:00,099 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:35:09,137 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:35:18,727 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:35:27,561 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:35:35,620 - root - INFO - Use Cuda.
+......................................................................................................
+2026-05-28 18:39:34,765 - root - INFO - Epoch: 2, Step: 100, Train Loss: 4.0583, Train Regression Loss 1.9938, Train Classification Loss: 2.0644, 
+........................................................2026-05-28 18:41:29,342 - root - INFO - lr rate :5e-05
+priors nums:4420
+2026-05-28 18:41:40,733 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:41:48,901 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:41:56,930 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:42:04,894 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:42:12,826 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:42:20,808 - root - INFO - Use Cuda.
+......................................................................................................
+2026-05-28 18:46:14,339 - root - INFO - Epoch: 3, Step: 100, Train Loss: 4.0410, Train Regression Loss 1.9724, Train Classification Loss: 2.0686, 
+........................................................2026-05-28 18:48:09,638 - root - INFO - lr rate :5e-05
+priors nums:4420
+2026-05-28 18:48:21,216 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:48:29,208 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:48:37,258 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:48:45,173 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:48:53,312 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:49:01,558 - root - INFO - Use Cuda.
+......................................................................................................
+2026-05-28 18:52:58,115 - root - INFO - Epoch: 4, Step: 100, Train Loss: 4.0861, Train Regression Loss 2.0115, Train Classification Loss: 2.0746, 
+........................................................2026-05-28 18:54:57,108 - root - INFO - lr rate :5e-05
+priors nums:4420
+2026-05-28 18:55:08,671 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:55:16,728 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:55:24,698 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:55:32,974 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:55:40,966 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 18:55:49,085 - root - INFO - Use Cuda.
+......................................................................................................
+2026-05-28 18:59:42,436 - root - INFO - Epoch: 5, Step: 100, Train Loss: 4.0032, Train Regression Loss 1.9446, Train Classification Loss: 2.0586, 
+........................................................2026-05-28 19:01:36,990 - root - INFO - lr rate :5e-05
+Processing ...
+2026-05-28 19:01:36,990 - root - INFO - lr rate :5e-05
+priors nums:4420
+2026-05-28 19:01:48,590 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:01:56,645 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:02:04,684 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:02:12,643 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:02:20,604 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:02:28,536 - root - INFO - Use Cuda.
+2026-05-28 19:03:13,215 - root - INFO - Epoch: 5, Test Loss: 3.5828, Test Regression Loss 1.6531, Test Classification Loss: 1.9297, Test Accuracy: 76.4431
+2026-05-28 19:03:13,265 - root - INFO - Saved model ./models/train-version-slim\slim-Epoch-5-Loss-3.582829234447885\slim-Epoch-5-Loss-3.582829234447885.pth
+priors nums:4420
+2026-05-28 19:03:22,690 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:03:30,665 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:03:38,786 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:03:46,887 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:03:54,871 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:04:02,902 - root - INFO - Use Cuda.
+......................................................................................................
+2026-05-28 19:07:57,846 - root - INFO - Epoch: 6, Step: 100, Train Loss: 4.0515, Train Regression Loss 1.9851, Train Classification Loss: 2.0664, 
+........................................................2026-05-28 19:10:00,318 - root - INFO - lr rate :5e-05
+priors nums:4420
+2026-05-28 19:10:12,011 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:10:20,086 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:10:28,143 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:10:36,204 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:10:44,218 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:10:52,137 - root - INFO - Use Cuda.
+......................................................................................................
+2026-05-28 19:14:57,133 - root - INFO - Epoch: 7, Step: 100, Train Loss: 3.9799, Train Regression Loss 1.9325, Train Classification Loss: 2.0474, 
+........................................................2026-05-28 19:16:54,228 - root - INFO - lr rate :5e-05
+priors nums:4420
+2026-05-28 19:17:05,868 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:17:15,142 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:17:23,501 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:17:32,085 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:17:40,023 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:17:48,144 - root - INFO - Use Cuda.
+......................................................................................................
+2026-05-28 19:21:49,370 - root - INFO - Epoch: 8, Step: 100, Train Loss: 3.9998, Train Regression Loss 1.9487, Train Classification Loss: 2.0511, 
+........................................................2026-05-28 19:23:42,754 - root - INFO - lr rate :5e-05
+priors nums:4420
+2026-05-28 19:23:53,396 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:24:01,494 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:24:09,742 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:24:18,139 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:24:26,247 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:24:34,305 - root - INFO - Use Cuda.
+......................................................................................................
+2026-05-28 19:28:28,332 - root - INFO - Epoch: 9, Step: 100, Train Loss: 3.9807, Train Regression Loss 1.9372, Train Classification Loss: 2.0436, 
+........................................................2026-05-28 19:30:28,990 - root - INFO - lr rate :5e-06
+priors nums:4420
+2026-05-28 19:30:39,600 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:30:47,763 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:30:55,905 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:31:03,853 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:31:11,862 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:31:19,809 - root - INFO - Use Cuda.
+......................................................................................................
+2026-05-28 19:35:19,007 - root - INFO - Epoch: 10, Step: 100, Train Loss: 3.9414, Train Regression Loss 1.9020, Train Classification Loss: 2.0394, 
+........................................................2026-05-28 19:37:13,184 - root - INFO - lr rate :5e-06
+Processing ...
+2026-05-28 19:37:13,184 - root - INFO - lr rate :5e-06
+priors nums:4420
+2026-05-28 19:37:24,024 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:37:32,093 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:37:40,170 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:37:48,187 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:37:56,187 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:38:04,220 - root - INFO - Use Cuda.
+2026-05-28 19:38:49,001 - root - INFO - Epoch: 10, Test Loss: 3.5324, Test Regression Loss 1.6114, Test Classification Loss: 1.9210, Test Accuracy: 76.4442
+2026-05-28 19:38:49,048 - root - INFO - Saved model ./models/train-version-slim\slim-Epoch-10-Loss-3.532355798051712\slim-Epoch-10-Loss-3.532355798051712.pth
+priors nums:4420
+2026-05-28 19:38:58,468 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:39:06,494 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:39:14,585 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:39:22,652 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:39:30,611 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:39:38,780 - root - INFO - Use Cuda.
+......................................................................................................
+2026-05-28 19:43:37,861 - root - INFO - Epoch: 11, Step: 100, Train Loss: 4.0069, Train Regression Loss 1.9588, Train Classification Loss: 2.0482, 
+........................................................2026-05-28 19:45:36,415 - root - INFO - lr rate :5e-06
+priors nums:4420
+2026-05-28 19:45:47,460 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:45:55,504 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:46:03,579 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:46:11,696 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:46:19,564 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:46:27,546 - root - INFO - Use Cuda.
+......................................................................................................
+2026-05-28 19:50:21,921 - root - INFO - Epoch: 12, Step: 100, Train Loss: 3.9636, Train Regression Loss 1.9155, Train Classification Loss: 2.0481, 
+........................................................2026-05-28 19:52:14,659 - root - INFO - lr rate :5e-06
+priors nums:4420
+2026-05-28 19:52:24,772 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:52:32,869 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:52:40,895 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:52:49,026 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:52:57,009 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:53:05,083 - root - INFO - Use Cuda.
+......................................................................................................
+2026-05-28 19:57:00,181 - root - INFO - Epoch: 13, Step: 100, Train Loss: 3.9987, Train Regression Loss 1.9484, Train Classification Loss: 2.0502, 
+........................................................2026-05-28 19:58:52,549 - root - INFO - lr rate :5e-06
+Processing ...
+2026-05-28 19:58:52,549 - root - INFO - lr rate :5e-06
+priors nums:4420
+2026-05-28 19:59:02,607 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:59:10,730 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:59:18,658 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:59:26,632 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:59:34,746 - root - INFO - Use Cuda.
+priors nums:4420
+2026-05-28 19:59:42,711 - root - INFO - Use Cuda.
+2026-05-28 20:00:27,223 - root - INFO - Epoch: 13, Test Loss: 3.5382, Test Regression Loss 1.6204, Test Classification Loss: 1.9178, Test Accuracy: 76.4432
+2026-05-28 20:00:27,274 - root - INFO - Saved model ./models/train-version-slim\slim-Epoch-13-Loss-3.5381711975057075\slim-Epoch-13-Loss-3.5381711975057075.pth

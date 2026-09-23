@@ -1,0 +1,47 @@
+
+(P5-390) C:\Users\user\Ultra-Light-Fast-Generic-Face-Detector-1MB>python ultraslim_pruned.py
+Loading TF model from: tf/export_models/slim_pruned_ultraslim/
+2026-05-04 09:56:53.903836: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Converting and quantizing ...
+2026-05-04 09:56:59.044925: W tensorflow/compiler/mlir/lite/python/tf_tfl_flatbuffer_helpers.cc:362] Ignored output_format.
+2026-05-04 09:56:59.045040: W tensorflow/compiler/mlir/lite/python/tf_tfl_flatbuffer_helpers.cc:365] Ignored drop_control_dependency.
+2026-05-04 09:56:59.048383: I tensorflow/cc/saved_model/reader.cc:45] Reading SavedModel from: tf/export_models/slim_pruned_ultraslim/
+2026-05-04 09:56:59.102240: I tensorflow/cc/saved_model/reader.cc:89] Reading meta graph with tags { serve }
+2026-05-04 09:56:59.103156: I tensorflow/cc/saved_model/reader.cc:130] Reading SavedModel debug info (if present) from: tf/export_models/slim_pruned_ultraslim/
+2026-05-04 09:56:59.279389: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:357] MLIR V1 optimization pass is not enabled
+2026-05-04 09:56:59.302370: I tensorflow/cc/saved_model/loader.cc:229] Restoring SavedModel bundle.
+2026-05-04 09:56:59.767531: I tensorflow/cc/saved_model/loader.cc:213] Running initialization op on SavedModel bundle at path: tf/export_models/slim_pruned_ultraslim/
+2026-05-04 09:56:59.888238: I tensorflow/cc/saved_model/loader.cc:305] SavedModel load for tags { serve }; Status: success: OK. Took 839843 microseconds.
+2026-05-04 09:57:00.180993: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:268] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+Representative dataset images: 1600
+Traceback (most recent call last):
+  File "C:\Users\user\Ultra-Light-Fast-Generic-Face-Detector-1MB\ultraslim_pruned.py", line 75, in <module>
+    main()
+  File "C:\Users\user\Ultra-Light-Fast-Generic-Face-Detector-1MB\ultraslim_pruned.py", line 53, in main
+    tflite_model = converter.convert()
+  File "C:\Users\user\AppData\Roaming\Python\Python39\site-packages\tensorflow\lite\python\lite.py", line 933, in wrapper
+    return self._convert_and_export_metrics(convert_func, *args, **kwargs)
+  File "C:\Users\user\AppData\Roaming\Python\Python39\site-packages\tensorflow\lite\python\lite.py", line 911, in _convert_and_export_metrics
+    result = convert_func(self, *args, **kwargs)
+  File "C:\Users\user\AppData\Roaming\Python\Python39\site-packages\tensorflow\lite\python\lite.py", line 1216, in convert
+    return self._convert_from_saved_model(graph_def)
+  File "C:\Users\user\AppData\Roaming\Python\Python39\site-packages\tensorflow\lite\python\lite.py", line 1100, in _convert_from_saved_model
+    return self._optimize_tflite_model(
+  File "C:\Users\user\AppData\Roaming\Python\Python39\site-packages\tensorflow\lite\python\convert_phase.py", line 215, in wrapper
+    raise error from None  # Re-throws the exception.
+  File "C:\Users\user\AppData\Roaming\Python\Python39\site-packages\tensorflow\lite\python\convert_phase.py", line 205, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\user\AppData\Roaming\Python\Python39\site-packages\tensorflow\lite\python\lite.py", line 871, in _optimize_tflite_model
+    model = self._quantize(model, q_in_type, q_out_type, q_activations_type,
+  File "C:\Users\user\AppData\Roaming\Python\Python39\site-packages\tensorflow\lite\python\lite.py", line 613, in _quantize
+    calibrated = calibrate_quantize.calibrate(
+  File "C:\Users\user\AppData\Roaming\Python\Python39\site-packages\tensorflow\lite\python\convert_phase.py", line 215, in wrapper
+    raise error from None  # Re-throws the exception.
+  File "C:\Users\user\AppData\Roaming\Python\Python39\site-packages\tensorflow\lite\python\convert_phase.py", line 205, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\user\AppData\Roaming\Python\Python39\site-packages\tensorflow\lite\python\optimize\calibrator.py", line 226, in calibrate
+    self._feed_tensors(dataset_gen, resize_input=True)
+  File "C:\Users\user\AppData\Roaming\Python\Python39\site-packages\tensorflow\lite\python\optimize\calibrator.py", line 129, in _feed_tensors
+    self._calibrator.Prepare([list(s.shape) for s in input_array])
+RuntimeError: Given shapes, [820,2] and [172,2], are not broadcastable.Node number 67 (MUL) failed to prepare.

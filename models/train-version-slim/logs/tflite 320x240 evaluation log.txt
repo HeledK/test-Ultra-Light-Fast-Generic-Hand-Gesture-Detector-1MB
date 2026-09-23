@@ -1,0 +1,281 @@
+
+
+(P5-390) C:\Users\user\Ultra-Light-Fast-Generic-Face-Detector-1MB>python evaluate_tflite.py --dataset_dir "C:\Users\user\Ultra-Light-Fast-Generic-Face-Detector-1MB\data\wider_face_add_lm_10_10\dataset" --model_path "C:\Users\user\Ultra-Light-Fast-Generic-Face-Detector-1MB\models\ultraslim_int8.tflite"
+
+[1/3] Loading ground truth …
+  Loaded GT for 10,000 images
+Sample GT keys: ['1cb88269-ba38-4986-8463-191fda5dfc91', '59f73090-e15c-4233-aac6-24df4285392d', '2821d591-ada7-40ae-abec-d2765c1ed056']
+Sample GT entry: {'class_idx': 1, 'boxes': [[0.08521006, 0.46060562, 0.45175166, 0.77483006]]}
+
+[2/3] Loading TFLite model …
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  Input  shape: [  1 240 320   3]  dtype: <class 'numpy.int8'>
+  Output shape: [820   7]  dtype: <class 'numpy.int8'>
+
+[3/3] Running inference …
+
+  palm: 5,000 images
+stem: 00080ad4-3dbf-4939-b349-d33c558229ce → uuid: 00080ad4-3dbf-4939-b349-d33c558229ce → in GT: True
+Best pred box: [0.63529414 0.20000002 0.8352942  0.5294118 ]
+GT boxes for this image: [[0.63369319, 0.20071044, 0.83556602, 0.5283763699999999]]
+Best pred score: 0.996
+Score distribution: min=0.000 max=0.996 mean=0.014 >0.5: 11 >0.1: 13 >0.01: 15
+stem: 0043e6fa-d0e1-4077-adfb-f26d11f12b22 → uuid: 0043e6fa-d0e1-4077-adfb-f26d11f12b22 → in GT: True
+stem: 004c8463-4a6d-456d-85a7-692da56ef9be → uuid: 004c8463-4a6d-456d-85a7-692da56ef9be → in GT: True
+stem: 004e40f3-e595-4158-ada2-0fa975c24fc4 → uuid: 004e40f3-e595-4158-ada2-0fa975c24fc4 → in GT: True
+stem: 00557681-ed5f-46e4-afee-bc18f928d370 → uuid: 00557681-ed5f-46e4-afee-bc18f928d370 → in GT: True
+  two: 5,000 images
+stem: 00011aeb-79c4-4239-a69d-981b560aa666 → uuid: 00011aeb-79c4-4239-a69d-981b560aa666 → in GT: True
+Best pred box: [0.         0.         0.08627451 0.10980393]
+GT boxes for this image: [[0.33833468, 0.28124318, 0.45589251, 0.41361744]]
+Best pred score: 0.000
+Score distribution: min=0.000 max=0.000 mean=0.000 >0.5: 0 >0.1: 0 >0.01: 0
+stem: 000f2450-adde-4699-816f-cb0d3c27012b → uuid: 000f2450-adde-4699-816f-cb0d3c27012b → in GT: True
+stem: 002e9ff1-98cf-4e17-8911-e55cfc10ea17 → uuid: 002e9ff1-98cf-4e17-8911-e55cfc10ea17 → in GT: True
+stem: 002ea554-99f5-4f7a-b0e7-9ddcb4b1f98a → uuid: 002ea554-99f5-4f7a-b0e7-9ddcb4b1f98a → in GT: True
+stem: 004592e4-c7a8-46f3-ae96-85495da7fc29 → uuid: 004592e4-c7a8-46f3-ae96-85495da7fc29 → in GT: True
+
+══════════════════════════════════════════════════════════
+  RESULTS  —  INT8 TFLite
+══════════════════════════════════════════════════════════
+Baseline
+── Per-class Detection Accuracy  (conf ≥ 0.50) ──────
+    palm:  4849 /  5000  =  96.98%
+     two:  4670 /  5000  =  93.40%
+   TOTAL:  9519 / 10000  =  95.19%
+
+── mAP @ IoU 0.5  (all-point interpolation) ────────────
+    palm: 0.8208
+     two: 0.8043
+     mAP: 0.8126
+
+── Confusion Matrix ──────────────────────────────────────
+               pred:palm    pred:two   no detect
+     gt:palm        4849           4         147
+      gt:two           8        4670         322
+
+══════════════════════════════════════════════════════════
+
+(P5-390) C:\Users\user\Ultra-Light-Fast-Generic-Face-Detector-1MB>python evaluate_tflite.py --dataset_dir "C:\Users\user\Ultra-Light-Fast-Generic-Face-Detector-1MB\data\wider_face_add_lm_10_10\dataset" --model_path "C:\Users\user\Ultra-Light-Fast-Generic-Face-Detector-1MB\models\ultraslim_pruned_int8.tflite"
+
+[1/3] Loading ground truth …
+  Loaded GT for 10,000 images
+Sample GT keys: ['1cb88269-ba38-4986-8463-191fda5dfc91', '59f73090-e15c-4233-aac6-24df4285392d', '2821d591-ada7-40ae-abec-d2765c1ed056']
+Sample GT entry: {'class_idx': 1, 'boxes': [[0.08521006, 0.46060562, 0.45175166, 0.77483006]]}
+
+[2/3] Loading TFLite model …
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  Input  shape: [  1 240 320   3]  dtype: <class 'numpy.int8'>
+  Output shape: [820   7]  dtype: <class 'numpy.int8'>
+
+[3/3] Running inference …
+
+  palm: 5,000 images
+stem: 00080ad4-3dbf-4939-b349-d33c558229ce → uuid: 00080ad4-3dbf-4939-b349-d33c558229ce → in GT: True
+Best pred box: [0.63529414 0.20392159 0.8431373  0.52156866]
+GT boxes for this image: [[0.63369319, 0.20071044, 0.83556602, 0.5283763699999999]]
+Best pred score: 0.996
+Score distribution: min=0.000 max=0.996 mean=0.014 >0.5: 11 >0.1: 14 >0.01: 24
+stem: 0043e6fa-d0e1-4077-adfb-f26d11f12b22 → uuid: 0043e6fa-d0e1-4077-adfb-f26d11f12b22 → in GT: True
+stem: 004c8463-4a6d-456d-85a7-692da56ef9be → uuid: 004c8463-4a6d-456d-85a7-692da56ef9be → in GT: True
+stem: 004e40f3-e595-4158-ada2-0fa975c24fc4 → uuid: 004e40f3-e595-4158-ada2-0fa975c24fc4 → in GT: True
+stem: 00557681-ed5f-46e4-afee-bc18f928d370 → uuid: 00557681-ed5f-46e4-afee-bc18f928d370 → in GT: True
+  two: 5,000 images
+stem: 00011aeb-79c4-4239-a69d-981b560aa666 → uuid: 00011aeb-79c4-4239-a69d-981b560aa666 → in GT: True
+Best pred box: [0.62352943 0.5647059  0.8745099  0.8000001 ]
+GT boxes for this image: [[0.33833468, 0.28124318, 0.45589251, 0.41361744]]
+Best pred score: 0.004
+Score distribution: min=0.000 max=0.004 mean=0.000 >0.5: 0 >0.1: 0 >0.01: 0
+stem: 000f2450-adde-4699-816f-cb0d3c27012b → uuid: 000f2450-adde-4699-816f-cb0d3c27012b → in GT: True
+stem: 002e9ff1-98cf-4e17-8911-e55cfc10ea17 → uuid: 002e9ff1-98cf-4e17-8911-e55cfc10ea17 → in GT: True
+stem: 002ea554-99f5-4f7a-b0e7-9ddcb4b1f98a → uuid: 002ea554-99f5-4f7a-b0e7-9ddcb4b1f98a → in GT: True
+stem: 004592e4-c7a8-46f3-ae96-85495da7fc29 → uuid: 004592e4-c7a8-46f3-ae96-85495da7fc29 → in GT: True
+
+══════════════════════════════════════════════════════════
+  RESULTS  —  INT8 TFLite
+══════════════════════════════════════════════════════════
+8% prune
+── Per-class Detection Accuracy  (conf ≥ 0.50) ──────
+    palm:  4845 /  5000  =  96.90%
+     two:  4650 /  5000  =  93.00%
+   TOTAL:  9495 / 10000  =  94.95%
+
+── mAP @ IoU 0.5  (all-point interpolation) ────────────
+    palm: 0.8195
+     two: 0.8056
+     mAP: 0.8126
+
+── Confusion Matrix ──────────────────────────────────────
+               pred:palm    pred:two   no detect
+     gt:palm        4845           8         147
+      gt:two           7        4650         343
+
+══════════════════════════════════════════════════════════
+
+(P5-390) C:\Users\user\Ultra-Light-Fast-Generic-Face-Detector-1MB>python evaluate_tflite.py --dataset_dir "C:\Users\user\Ultra-Light-Fast-Generic-Face-Detector-1MB\data\wider_face_add_lm_10_10\dataset" --model_path "C:\Users\user\Ultra-Light-Fast-Generic-Face-Detector-1MB\models\ultraslim_pruned_int8.tflite"
+
+[1/3] Loading ground truth …
+  Loaded GT for 10,000 images
+Sample GT keys: ['1cb88269-ba38-4986-8463-191fda5dfc91', '59f73090-e15c-4233-aac6-24df4285392d', '2821d591-ada7-40ae-abec-d2765c1ed056']
+Sample GT entry: {'class_idx': 1, 'boxes': [[0.08521006, 0.46060562, 0.45175166, 0.77483006]]}
+
+[2/3] Loading TFLite model …
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  Input  shape: [  1 240 320   3]  dtype: <class 'numpy.int8'>
+  Output shape: [820   7]  dtype: <class 'numpy.int8'>
+
+[3/3] Running inference …
+
+  palm: 5,000 images
+stem: 00080ad4-3dbf-4939-b349-d33c558229ce → uuid: 00080ad4-3dbf-4939-b349-d33c558229ce → in GT: True
+Best pred box: [0.63529414 0.20000002 0.83921576 0.52156866]
+GT boxes for this image: [[0.63369319, 0.20071044, 0.83556602, 0.5283763699999999]]
+Best pred score: 0.996
+Score distribution: min=0.000 max=0.996 mean=0.014 >0.5: 11 >0.1: 14 >0.01: 17
+stem: 0043e6fa-d0e1-4077-adfb-f26d11f12b22 → uuid: 0043e6fa-d0e1-4077-adfb-f26d11f12b22 → in GT: True
+stem: 004c8463-4a6d-456d-85a7-692da56ef9be → uuid: 004c8463-4a6d-456d-85a7-692da56ef9be → in GT: True
+stem: 004e40f3-e595-4158-ada2-0fa975c24fc4 → uuid: 004e40f3-e595-4158-ada2-0fa975c24fc4 → in GT: True
+stem: 00557681-ed5f-46e4-afee-bc18f928d370 → uuid: 00557681-ed5f-46e4-afee-bc18f928d370 → in GT: True
+  two: 5,000 images
+stem: 00011aeb-79c4-4239-a69d-981b560aa666 → uuid: 00011aeb-79c4-4239-a69d-981b560aa666 → in GT: True
+Best pred box: [0.5529412 0.5529412 0.7725491 0.8000001]
+GT boxes for this image: [[0.33833468, 0.28124318, 0.45589251, 0.41361744]]
+Best pred score: 0.016
+Score distribution: min=0.000 max=0.016 mean=0.000 >0.5: 0 >0.1: 0 >0.01: 3
+stem: 000f2450-adde-4699-816f-cb0d3c27012b → uuid: 000f2450-adde-4699-816f-cb0d3c27012b → in GT: True
+stem: 002e9ff1-98cf-4e17-8911-e55cfc10ea17 → uuid: 002e9ff1-98cf-4e17-8911-e55cfc10ea17 → in GT: True
+stem: 002ea554-99f5-4f7a-b0e7-9ddcb4b1f98a → uuid: 002ea554-99f5-4f7a-b0e7-9ddcb4b1f98a → in GT: True
+stem: 004592e4-c7a8-46f3-ae96-85495da7fc29 → uuid: 004592e4-c7a8-46f3-ae96-85495da7fc29 → in GT: True
+
+══════════════════════════════════════════════════════════
+  RESULTS  —  INT8 TFLite
+══════════════════════════════════════════════════════════
+25% prune
+── Per-class Detection Accuracy  (conf ≥ 0.50) ──────
+    palm:  4846 /  5000  =  96.92%
+     two:  4662 /  5000  =  93.24%
+   TOTAL:  9508 / 10000  =  95.08%
+
+── mAP @ IoU 0.5  (all-point interpolation) ────────────
+    palm: 0.8212
+     two: 0.8056
+     mAP: 0.8134
+
+── Confusion Matrix ──────────────────────────────────────
+               pred:palm    pred:two   no detect
+     gt:palm        4846           6         148
+      gt:two           6        4662         332
+
+══════════════════════════════════════════════════════════
+
+(P5-390) C:\Users\user\Ultra-Light-Fast-Generic-Face-Detector-1MB>python evaluate_tflite.py --dataset_dir "C:\Users\user\Ultra-Light-Fast-Generic-Face-Detector-1MB\data\wider_face_add_lm_10_10\dataset" --model_path "C:\Users\user\Ultra-Light-Fast-Generic-Face-Detector-1MB\models\ultraslim_pruned_int8.tflite"
+
+[1/3] Loading ground truth …
+  Loaded GT for 10,000 images
+Sample GT keys: ['1cb88269-ba38-4986-8463-191fda5dfc91', '59f73090-e15c-4233-aac6-24df4285392d', '2821d591-ada7-40ae-abec-d2765c1ed056']
+Sample GT entry: {'class_idx': 1, 'boxes': [[0.08521006, 0.46060562, 0.45175166, 0.77483006]]}
+
+[2/3] Loading TFLite model …
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  Input  shape: [  1 240 320   3]  dtype: <class 'numpy.int8'>
+  Output shape: [820   7]  dtype: <class 'numpy.int8'>
+
+[3/3] Running inference …
+
+  palm: 5,000 images
+stem: 00080ad4-3dbf-4939-b349-d33c558229ce → uuid: 00080ad4-3dbf-4939-b349-d33c558229ce → in GT: True
+Best pred box: [0.627451   0.20392159 0.8431373  0.52156866]
+GT boxes for this image: [[0.63369319, 0.20071044, 0.83556602, 0.5283763699999999]]
+Best pred score: 0.996
+Score distribution: min=0.000 max=0.996 mean=0.014 >0.5: 12 >0.1: 14 >0.01: 17
+stem: 0043e6fa-d0e1-4077-adfb-f26d11f12b22 → uuid: 0043e6fa-d0e1-4077-adfb-f26d11f12b22 → in GT: True
+stem: 004c8463-4a6d-456d-85a7-692da56ef9be → uuid: 004c8463-4a6d-456d-85a7-692da56ef9be → in GT: True
+stem: 004e40f3-e595-4158-ada2-0fa975c24fc4 → uuid: 004e40f3-e595-4158-ada2-0fa975c24fc4 → in GT: True
+stem: 00557681-ed5f-46e4-afee-bc18f928d370 → uuid: 00557681-ed5f-46e4-afee-bc18f928d370 → in GT: True
+  two: 5,000 images
+stem: 00011aeb-79c4-4239-a69d-981b560aa666 → uuid: 00011aeb-79c4-4239-a69d-981b560aa666 → in GT: True
+Best pred box: [0.5529412  0.5568628  0.76470596 0.8196079 ]
+GT boxes for this image: [[0.33833468, 0.28124318, 0.45589251, 0.41361744]]
+Best pred score: 0.004
+Score distribution: min=0.000 max=0.004 mean=0.000 >0.5: 0 >0.1: 0 >0.01: 0
+stem: 000f2450-adde-4699-816f-cb0d3c27012b → uuid: 000f2450-adde-4699-816f-cb0d3c27012b → in GT: True
+stem: 002e9ff1-98cf-4e17-8911-e55cfc10ea17 → uuid: 002e9ff1-98cf-4e17-8911-e55cfc10ea17 → in GT: True
+stem: 002ea554-99f5-4f7a-b0e7-9ddcb4b1f98a → uuid: 002ea554-99f5-4f7a-b0e7-9ddcb4b1f98a → in GT: True
+stem: 004592e4-c7a8-46f3-ae96-85495da7fc29 → uuid: 004592e4-c7a8-46f3-ae96-85495da7fc29 → in GT: True
+
+══════════════════════════════════════════════════════════
+  RESULTS  —  INT8 TFLite
+══════════════════════════════════════════════════════════
+35% prune
+── Per-class Detection Accuracy  (conf ≥ 0.50) ──────
+    palm:  4836 /  5000  =  96.72%
+     two:  4634 /  5000  =  92.68%
+   TOTAL:  9470 / 10000  =  94.70%
+
+── mAP @ IoU 0.5  (all-point interpolation) ────────────
+    palm: 0.8200
+     two: 0.8038
+     mAP: 0.8119
+
+── Confusion Matrix ──────────────────────────────────────
+               pred:palm    pred:two   no detect
+     gt:palm        4836           8         156
+      gt:two          11        4634         355
+
+══════════════════════════════════════════════════════════
+
+(P5-390) C:\Users\user\Ultra-Light-Fast-Generic-Face-Detector-1MB>python evaluate_tflite.py --dataset_dir "C:\Users\user\Ultra-Light-Fast-Generic-Face-Detector-1MB\data\wider_face_add_lm_10_10\dataset" --model_path "C:\Users\user\Ultra-Light-Fast-Generic-Face-Detector-1MB\models\ultraslim_pruned_int8.tflite"
+
+[1/3] Loading ground truth …
+  Loaded GT for 10,000 images
+Sample GT keys: ['1cb88269-ba38-4986-8463-191fda5dfc91', '59f73090-e15c-4233-aac6-24df4285392d', '2821d591-ada7-40ae-abec-d2765c1ed056']
+Sample GT entry: {'class_idx': 1, 'boxes': [[0.08521006, 0.46060562, 0.45175166, 0.77483006]]}
+
+[2/3] Loading TFLite model …
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  Input  shape: [  1 240 320   3]  dtype: <class 'numpy.int8'>
+  Output shape: [820   7]  dtype: <class 'numpy.int8'>
+
+[3/3] Running inference …
+
+  palm: 5,000 images
+stem: 00080ad4-3dbf-4939-b349-d33c558229ce → uuid: 00080ad4-3dbf-4939-b349-d33c558229ce → in GT: True
+Best pred box: [0.63529414 0.20000002 0.83921576 0.52156866]
+GT boxes for this image: [[0.63369319, 0.20071044, 0.83556602, 0.5283763699999999]]
+Best pred score: 0.996
+Score distribution: min=0.000 max=0.996 mean=0.014 >0.5: 11 >0.1: 14 >0.01: 17
+stem: 0043e6fa-d0e1-4077-adfb-f26d11f12b22 → uuid: 0043e6fa-d0e1-4077-adfb-f26d11f12b22 → in GT: True
+stem: 004c8463-4a6d-456d-85a7-692da56ef9be → uuid: 004c8463-4a6d-456d-85a7-692da56ef9be → in GT: True
+stem: 004e40f3-e595-4158-ada2-0fa975c24fc4 → uuid: 004e40f3-e595-4158-ada2-0fa975c24fc4 → in GT: True
+stem: 00557681-ed5f-46e4-afee-bc18f928d370 → uuid: 00557681-ed5f-46e4-afee-bc18f928d370 → in GT: True
+  two: 5,000 images
+stem: 00011aeb-79c4-4239-a69d-981b560aa666 → uuid: 00011aeb-79c4-4239-a69d-981b560aa666 → in GT: True
+Best pred box: [0.5764706  0.59607846 0.7725491  0.83921576]
+GT boxes for this image: [[0.33833468, 0.28124318, 0.45589251, 0.41361744]]
+Best pred score: 0.004
+Score distribution: min=0.000 max=0.004 mean=0.000 >0.5: 0 >0.1: 0 >0.01: 0
+stem: 000f2450-adde-4699-816f-cb0d3c27012b → uuid: 000f2450-adde-4699-816f-cb0d3c27012b → in GT: True
+stem: 002e9ff1-98cf-4e17-8911-e55cfc10ea17 → uuid: 002e9ff1-98cf-4e17-8911-e55cfc10ea17 → in GT: True
+stem: 002ea554-99f5-4f7a-b0e7-9ddcb4b1f98a → uuid: 002ea554-99f5-4f7a-b0e7-9ddcb4b1f98a → in GT: True
+stem: 004592e4-c7a8-46f3-ae96-85495da7fc29 → uuid: 004592e4-c7a8-46f3-ae96-85495da7fc29 → in GT: True
+
+══════════════════════════════════════════════════════════
+  RESULTS  —  INT8 TFLite
+══════════════════════════════════════════════════════════
+50% prune
+── Per-class Detection Accuracy  (conf ≥ 0.50) ──────
+    palm:  4834 /  5000  =  96.68%
+     two:  4638 /  5000  =  92.76%
+   TOTAL:  9472 / 10000  =  94.72%
+
+── mAP @ IoU 0.5  (all-point interpolation) ────────────
+    palm: 0.8210
+     two: 0.8060
+     mAP: 0.8135
+
+── Confusion Matrix ──────────────────────────────────────
+               pred:palm    pred:two   no detect
+     gt:palm        4834           7         159
+      gt:two          13        4638         349
+
+══════════════════════════════════════════════════════════

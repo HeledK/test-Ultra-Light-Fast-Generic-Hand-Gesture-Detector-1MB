@@ -46,7 +46,7 @@ class VOCDataset:
         else:
             logging.info("No labels file, using default VOC classes.")
             self.class_names = ('BACKGROUND',
-                                'face')
+                                'palm')
 
         self.class_dict = {class_name: i for i, class_name in enumerate(self.class_names)}
 
@@ -108,9 +108,9 @@ class VOCDataset:
                 is_difficult_str = object.find('difficult').text
                 is_difficult.append(int(is_difficult_str) if is_difficult_str else 0)
 
-        return (np.array(boxes, dtype=np.float32),
-                np.array(labels, dtype=np.int64),
-                np.array(is_difficult, dtype=np.uint8))
+        return (np.array(boxes, dtype=np.float32).reshape(-1,4), #add reshape
+                np.array(labels, dtype=np.int64).reshape(-1),
+                np.array(is_difficult, dtype=np.uint8).reshape(-1))
 
     def _read_image(self, image_id):
         image_file = self.root / f"JPEGImages/{image_id}.jpg"
